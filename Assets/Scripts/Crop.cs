@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Crop:MonoBehaviour 
+public class Crop:MonoBehaviour, IItem
 {
 
 
@@ -88,5 +88,30 @@ public class Crop:MonoBehaviour
     private bool IsGrown()
     {
         return cropScriptableObject.growthTime < this.growingTime;
+    }
+
+    public float GetBuyingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public float GetSellingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetBuyingPrice(float buyingPrice)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetSellingPrice(float sellingPrice)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public Sprite GetSprite()
+    {
+        throw new System.NotImplementedException();
     }
 }

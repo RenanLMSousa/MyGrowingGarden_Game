@@ -8,7 +8,7 @@ public class VaseScriptableObject : ScriptableObject
     public Sprite vaseSprite;
     public string vaseName;
     public string vaseDescription;
-    public float buyingValue;
-    public float sellingValue;
+    public float buyingPrice;
+    public float sellingPrice;
 
 }

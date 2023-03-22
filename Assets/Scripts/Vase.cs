@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Vase : MonoBehaviour
+public class Vase : MonoBehaviour,IItem
 {
 
     public VaseScriptableObject vaseScriptableObject;
@@ -26,5 +26,30 @@ public class Vase : MonoBehaviour
     public Vector2 GetVaseTop()
     {
         return this.transform.position + new Vector3(0,1,0);
+    }
+
+    public float GetBuyingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public float GetSellingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetBuyingPrice(float buyingPrice)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetSellingPrice(float sellingPrice)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public Sprite GetSprite()
+    {
+        throw new System.NotImplementedException();
     }
 }

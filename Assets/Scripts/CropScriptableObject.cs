@@ -8,8 +8,8 @@ public class CropScriptableObject : ScriptableObject
     public List<Sprite> spritePhase;
     public string plantName;
     public string plantDescription;
-    public float buyingValue;
-    public float sellingValue;
     public float growthTime;
+    public float buyingPrice;
+    public float sellingPrice;
 
 }
