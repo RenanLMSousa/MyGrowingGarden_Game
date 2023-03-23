@@ -990,8 +990,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889029744}
-  - component: {fileID: 889029746}
   - component: {fileID: 889029745}
+  - component: {fileID: 889029746}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -1034,12 +1034,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a51c925df83eb4b948e66026ac8fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridElementPrefab: {fileID: -4905383514770717293, guid: 55c83256e366c1d459d8a5e17ed4bb1e, type: 3}
-  shop: {fileID: 889029746}
-  cropGridElementList: []
-  vaseGridElementList: []
-  cropGrid: {fileID: 2034222646}
-  vaseGrid: {fileID: 574234180}
+  shopGrid:
+    gridElementPrefab: {fileID: -4905383514770717293, guid: 55c83256e366c1d459d8a5e17ed4bb1e, type: 3}
+    itemGrid: {fileID: 2034222646}
+    itemGridElementList: []
+    shopStockScriptableObject: {fileID: 11400000, guid: cfac0fe19eef7e64ca62c3ff32725724, type: 2}
 --- !u!114 &889029746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,10 +1048,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 889029743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 277be4079c8d9a44a9e2fac1162e6760, type: 3}
+  m_Script: {fileID: 11500000, guid: b3a51c925df83eb4b948e66026ac8fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopStockScriptableObject: {fileID: 11400000, guid: cfac0fe19eef7e64ca62c3ff32725724, type: 2}
+  shopGrid:
+    gridElementPrefab: {fileID: -4905383514770717293, guid: 55c83256e366c1d459d8a5e17ed4bb1e, type: 3}
+    itemGrid: {fileID: 574234180}
+    itemGridElementList: []
+    shopStockScriptableObject: {fileID: 11400000, guid: cfac0fe19eef7e64ca62c3ff32725724, type: 2}
 --- !u!114 &1150001705 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5761921318322987535, guid: d79196f713a913240b24190c0b4bd57f, type: 3}

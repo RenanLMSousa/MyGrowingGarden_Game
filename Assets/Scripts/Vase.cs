@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Vase : MonoBehaviour,IItem
+public class Vase : Item
 {
 
     public VaseScriptableObject vaseScriptableObject;
@@ -16,7 +16,7 @@ public class Vase : MonoBehaviour,IItem
     }
 
    public bool GetIsPlantedOn()
-    {
+    {   
         return isPlantedOn;
     }
     public void SetIsPlantedOn(bool isPlantedOn)
@@ -28,33 +28,34 @@ public class Vase : MonoBehaviour,IItem
         return this.transform.position + new Vector3(0,1,0);
     }
 
-    public float GetBuyingPrice()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public float GetSellingPrice()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void SetBuyingPrice(float buyingPrice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void SetSellingPrice(float sellingPrice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public Sprite GetSprite()
+  
+    public override Sprite GetSprite()
     {
         return vaseScriptableObject.vaseSprite;
     }
 
-    public string GetName()
+    public override string GetName()
     {
         return vaseScriptableObject.name;
+    }
+
+    public override float GetBuyingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override float GetSellingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetBuyingPrice(float buyingPrice)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetSellingPrice(float sellingPrice)
+    {
+        throw new System.NotImplementedException();
     }
 }

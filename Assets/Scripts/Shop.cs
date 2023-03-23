@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Shop:MonoBehaviour
+public class Shop
 {
     public delegate void Notify();  // delegate
     public event Notify StockChanged; // event
@@ -13,8 +12,9 @@ public class Shop:MonoBehaviour
     public  IItem[] AvailableItems = new IItem[shopSize];
 
 
-    public void Start()
+    public Shop(ShopStockScriptableObject shopStockScriptableObject)
     {
+        this.shopStockScriptableObject = shopStockScriptableObject;
         ChangeStock();
     }
     public  void BuyItem(IItem item,IBuyer buyer, int ammount = 1)
@@ -28,14 +28,15 @@ public class Shop:MonoBehaviour
     {
         for(int i = 0; i < shopSize; i++)
         {
-            int randomItem = UnityEngine.Random.Range(0,shopStockScriptableObject.cropStock.Count);
-            AvailableItems[i] = shopStockScriptableObject.cropStock[randomItem];
-            Debug.Log(AvailableItems[i]);
+            int randomItem = UnityEngine.Random.Range(0,shopStockScriptableObject.itemStock.Count);
+            AvailableItems[i] = (IItem)shopStockScriptableObject.itemStock[randomItem];
+            
         }
         OnStockChanged();
     }
     public void OnStockChanged()
     {
+       
         StockChanged?.Invoke();
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Crop:MonoBehaviour, IItem
+public class Crop:Item
 {
 
 
@@ -90,34 +90,34 @@ public class Crop:MonoBehaviour, IItem
         return cropScriptableObject.growthTime < this.growingTime;
     }
 
-    public float GetBuyingPrice()
-    {
-        throw new System.NotImplementedException();
-    }
 
-    public float GetSellingPrice()
+    public override Sprite GetSprite()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void SetBuyingPrice(float buyingPrice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void SetSellingPrice(float sellingPrice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public Sprite GetSprite()
-    {
-        Debug.Log(totalStages);
         return cropScriptableObject.spritePhase[cropScriptableObject.spritePhase.Count-1];
     }
 
-    public string GetName()
+    public override string GetName()
     {
         return cropScriptableObject.name;
+    }
+
+    public override float GetBuyingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override float GetSellingPrice()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetBuyingPrice(float buyingPrice)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetSellingPrice(float sellingPrice)
+    {
+        throw new System.NotImplementedException();
     }
 }
