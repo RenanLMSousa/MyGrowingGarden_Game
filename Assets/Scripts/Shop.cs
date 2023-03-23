@@ -10,8 +10,8 @@ public class Shop:MonoBehaviour
     public event Notify StockChanged; // event
     public  const int shopSize = 8;
     public ShopStockScriptableObject shopStockScriptableObject;
-    public static IItem[] AvailableCrops = new IItem[shopSize];
-    public static IItem[] AvailableVases = new IItem[shopSize];
+    public  IItem[] AvailableItems = new IItem[shopSize];
+
 
     public void Start()
     {
@@ -29,8 +29,8 @@ public class Shop:MonoBehaviour
         for(int i = 0; i < shopSize; i++)
         {
             int randomItem = UnityEngine.Random.Range(0,shopStockScriptableObject.cropStock.Count);
-            AvailableCrops[i] = shopStockScriptableObject.cropStock[randomItem];
-            AvailableVases[i] = shopStockScriptableObject.vaseStock[randomItem];
+            AvailableItems[i] = shopStockScriptableObject.cropStock[randomItem];
+            Debug.Log(AvailableItems[i]);
         }
         OnStockChanged();
     }

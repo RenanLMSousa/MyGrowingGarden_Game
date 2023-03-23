@@ -2,45 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIShop : MonoBehaviour
+
+[System.Serializable]
+public class ShopGrid
 {
     public UIShopGridElement gridElementPrefab;
-    public Shop shop;
-    public List<UIShopGridElement> cropGridElementList;
-    public List<UIShopGridElement> vaseGridElementList;
+    public GameObject itemGrid;
+    
 
-    public GameObject cropGrid;
-    public GameObject vaseGrid;
+    public Shop shop;
+    public List<UIShopGridElement> itemGridElementList;
+
+
+
+}
+public class UIShop : MonoBehaviour
+{
+
+    public ShopGrid shopGrid;
+
+    
+
 
     private void Awake()
     {
-        cropGridElementList = new List<UIShopGridElement>();
-        vaseGridElementList = new List<UIShopGridElement>();
-        shop.StockChanged += OnStockChanged;
-    }
-    private void Start()
-    {
-        for(int i = 0; i < Shop.shopSize; i++)
-        {
-            UIShopGridElement _gridElement = Instantiate(gridElementPrefab);
-            cropGridElementList.Add(_gridElement);
-            _gridElement.transform.SetParent(cropGrid.transform);
-            _gridElement.transform.localScale = new Vector3(1, 1, 1);
-
-            _gridElement = Instantiate(gridElementPrefab);
-            vaseGridElementList.Add(_gridElement);
-            _gridElement.transform.SetParent(vaseGrid.transform);
-            _gridElement.transform.localScale = new Vector3(1, 1, 1);
-
-        }
+        shopGrid.shop = this.GetComponent<Shop>();
+        shopGrid.itemGridElementList = new List<UIShopGridElement>();
+        shopGrid.shop.StockChanged += OnStockChanged;
+        InitializeGrid();
 
     }
     private void OnStockChanged()
     {
+
+
         for (int i = 0; i < Shop.shopSize; i++)
         {
-            cropGridElementList[i].displayItem(Shop.AvailableCrops[i]);
-            vaseGridElementList[i].displayItem(Shop.AvailableVases[i]);
+            
+            shopGrid.itemGridElementList[i].displayItem(shopGrid.shop.AvailableItems[i]);
+
+        }
+    }
+    void InitializeGrid()
+    {
+        for (int i = 0; i < Shop.shopSize; i++)
+        {
+            UIShopGridElement _gridElement = Instantiate(shopGrid.gridElementPrefab);
+            shopGrid.itemGridElementList.Add(_gridElement);
+            _gridElement.transform.SetParent(shopGrid.itemGrid.transform);
+            _gridElement.transform.localScale = new Vector3(1, 1, 1);
 
         }
     }
