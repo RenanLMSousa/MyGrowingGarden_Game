@@ -5,7 +5,7 @@ using UnityEngine;
 
 public interface IItem
 {
-
+    public string GetName();
     public float GetBuyingPrice();
     public float GetSellingPrice();
     public void SetBuyingPrice(float buyingPrice);

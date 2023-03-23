@@ -112,6 +112,12 @@ public class Crop:MonoBehaviour, IItem
 
     public Sprite GetSprite()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(totalStages);
+        return cropScriptableObject.spritePhase[cropScriptableObject.spritePhase.Count-1];
+    }
+
+    public string GetName()
+    {
+        return cropScriptableObject.name;
     }
 }

@@ -50,6 +50,11 @@ public class Vase : MonoBehaviour,IItem
 
     public Sprite GetSprite()
     {
-        throw new System.NotImplementedException();
+        return vaseScriptableObject.vaseSprite;
+    }
+
+    public string GetName()
+    {
+        return vaseScriptableObject.name;
     }
 }
