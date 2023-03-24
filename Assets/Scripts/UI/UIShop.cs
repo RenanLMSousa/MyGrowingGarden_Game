@@ -31,7 +31,7 @@ public class UIShop : MonoBehaviour
     void Awake()
     {
 
-        shopGrid.shop = new Shop(shopGrid.shopStockScriptableObject);
+        shopGrid.shop = new Shop(shopGrid.shopStockScriptableObject.itemStock);
         shopGrid.shop.StockChanged += OnStockChanged;
 
     }
@@ -43,9 +43,9 @@ public class UIShop : MonoBehaviour
     private void OnStockChanged()
     {
 
-        for (int i = 0; i < Shop.shopSize; i++)
+        for (int i = 0; i < shopGrid.itemGridElementList.Count; i++)
         {
-            IItem item = shopGrid.shop.AvailableItems[i];
+            Item item = shopGrid.shop.AvailableItems[i];
             if (item != null)
             {
                 shopGrid.itemGridElementList[i].displayItem(item);
@@ -55,7 +55,7 @@ public class UIShop : MonoBehaviour
     }
     void InitializeGrid()
     {
-        for (int i = 0; i < Shop.shopSize; i++)
+        for (int i = 0; i < shopGrid.shop.AvailableItems.Count; i++)
         {
             UIShopGridElement _gridElement = MonoBehaviour.Instantiate(shopGrid.gridElementPrefab);
             shopGrid.itemGridElementList.Add(_gridElement);

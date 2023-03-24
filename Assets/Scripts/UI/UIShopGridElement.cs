@@ -9,7 +9,7 @@ public class UIShopGridElement : MonoBehaviour
     public TMP_Text text;
     public Image image;
 
-    public void displayItem(IItem item)
+    public void displayItem(Item item)
     {
         if(item == null)
         {

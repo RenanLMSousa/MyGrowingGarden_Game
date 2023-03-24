@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : IBuyer
 {
 
-    public void BuyItem(IItem item, int ammount)
+    public void BuyItem(Item item, int ammount)
     {
         Debug.Log(ammount.ToString() + item + "bought!");
     }
@@ -20,7 +20,7 @@ public class Player : IBuyer
         throw new System.NotImplementedException();
     }
 
-    public void SellItem(IItem item, int ammount)
+    public void SellItem(Item item, int ammount)
     {
         throw new System.NotImplementedException();
     }
