@@ -15,11 +15,10 @@ public class Item
         this.sellingPrice = itemScriptableObject.sellingPrice;
         this.name = itemScriptableObject.name;
         this.sprite = itemScriptableObject.GetItemSprite();
-        
             }
     public float GetBuyingPrice()
     {
-        throw new System.NotImplementedException();
+        return this.buyingPrice;
     }
 
     public string GetName()
@@ -29,7 +28,7 @@ public class Item
 
     public float GetSellingPrice()
     {
-        throw new System.NotImplementedException();
+        return this.sellingPrice;
     }
 
     public Sprite GetSprite()
@@ -39,11 +38,11 @@ public class Item
 
     public void SetBuyingPrice(float buyingPrice)
     {
-        throw new System.NotImplementedException();
+        this.buyingPrice = buyingPrice;
     }
 
     public void SetSellingPrice(float sellingPrice)
     {
-        throw new System.NotImplementedException();
+        this.sellingPrice = sellingPrice;
     }
 }
