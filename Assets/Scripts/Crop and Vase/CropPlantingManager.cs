@@ -4,15 +4,20 @@ using UnityEngine;
 
 
 public class CropVasePair
-{
+{   //Represents the Crop and vase relation, there can be a vase without a crop but not the opposite
     public Crop crop;
     public Vase vase;
 
     public CropVasePair(Crop crop= null, Vase vase = null)
     {
+        if(vase == null && crop != null)
+        {
+            Debug.Log("Vase with crop missing");
+        }
         this.crop = crop;
         this.vase = vase;
     }
+
 
 }
 public class CropPlantingManager 
