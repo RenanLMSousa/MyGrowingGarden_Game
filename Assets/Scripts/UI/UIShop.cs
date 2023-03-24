@@ -37,31 +37,37 @@ public class UIShop : MonoBehaviour
     }
     private void Start()
     {
-        InitializeGrid();
+        InitializeGridElements();
         OnStockChanged();
     }
     private void OnStockChanged()
-    {
+    {   //When the stock changes, updates the Grid elements
 
         for (int i = 0; i < shopGrid.itemGridElementList.Count; i++)
         {
+            UIShopGridElement gridElement = shopGrid.itemGridElementList[i];
             Item item = shopGrid.shop.AvailableItems[i];
-            if (item != null)
-            {
-                shopGrid.itemGridElementList[i].displayItem(item);
-            }
+            ChangeGridElementDisplay(gridElement, item);
 
         }
     }
-    void InitializeGrid()
-    {
+    void InitializeGridElements()
+    {   //Creates the grid elements, one for each item
         for (int i = 0; i < shopGrid.shop.AvailableItems.Count; i++)
         {
-            UIShopGridElement _gridElement = MonoBehaviour.Instantiate(shopGrid.gridElementPrefab);
-            shopGrid.itemGridElementList.Add(_gridElement);
-            _gridElement.transform.SetParent(shopGrid.itemGrid.transform);
-            _gridElement.transform.localScale = new Vector3(1, 1, 1);
-
+            CreateNewGridElement();
         }
+    }
+
+    private void ChangeGridElementDisplay(UIShopGridElement gridElement,Item item) {
+        //Change the item being displayed
+        gridElement.displayItem(item);
+    }
+    private void CreateNewGridElement()
+    {   //Create a new grid element as last
+        UIShopGridElement _gridElement = MonoBehaviour.Instantiate(shopGrid.gridElementPrefab);
+        shopGrid.itemGridElementList.Add(_gridElement);
+        _gridElement.transform.SetParent(shopGrid.itemGrid.transform);
+        _gridElement.transform.localScale = new Vector3(1, 1, 1);
     }
 }
