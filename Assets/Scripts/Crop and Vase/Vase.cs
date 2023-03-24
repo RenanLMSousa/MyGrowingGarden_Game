@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Vase : MonoBehaviour
 {
-
-    public VaseScriptableObject vaseScriptableObject;
+    [SerializeField]
+    private VaseScriptableObject vaseScriptableObject;
     private bool isPlantedOn;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class Vase : MonoBehaviour
         this.isPlantedOn = isPlantedOn;
     }
     public Vector2 GetVaseTop()
-    {
+    {   //Return the position where the plant should grow
         return this.transform.position + new Vector3(0,1,0);
     }
 
