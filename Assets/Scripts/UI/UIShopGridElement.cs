@@ -12,7 +12,9 @@ public abstract class UIShopGridElement : MonoBehaviour
     public Item item;
 
 
-    protected ItemScriptableObject itemScriptableObject;
+
+
+    public ItemScriptableObject itemScriptableObject;
 
     public abstract void DisplayItem(Item item);
     public  void setItemImage()

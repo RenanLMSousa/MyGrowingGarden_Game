@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : IBuyer
+[CreateAssetMenu(fileName = "Player", menuName = "ScriptableObjects/Player", order = 1)]
+public class Player : ScriptableObject, IBuyer
 {
-
+    public string playerName;
+    public Inventory inventory;
+    public float money;
     public void BuyItem(Item item, int ammount)
     {
-        Debug.Log(ammount.ToString() + item + "bought!");
+        throw new System.NotImplementedException();
     }
 
     public bool CanBuy(float price)
