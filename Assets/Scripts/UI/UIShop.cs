@@ -16,10 +16,6 @@ public class ShopGrid
     public ShopStockScriptableObject shopStockScriptableObject;
 
     public ShopGrid shopGrid;
-
-
-
-
    
 
 }
@@ -61,7 +57,7 @@ public class UIShop : MonoBehaviour
 
     private void ChangeGridElementDisplay(UIShopGridElement gridElement,Item item) {
         //Change the item being displayed
-        gridElement.displayItem(item);
+        gridElement.DisplayItem(item);
     }
     private void CreateNewGridElement()
     {   //Create a new grid element as last

@@ -660,7 +660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &543993846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
     gridElementPrefab: {fileID: -4905383514770717293, guid: 55c83256e366c1d459d8a5e17ed4bb1e, type: 3}
     itemGrid: {fileID: 574234180}
     itemGridElementList: []
-    shopStockScriptableObject: {fileID: 11400000, guid: e2cd4aa1041d49445bcf341334d0afe6, type: 2}
+    shopStockScriptableObject: {fileID: 11400000, guid: 1b20088bd05aef64bbc7e49a2a441e3a, type: 2}
 --- !u!114 &1150001705 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5761921318322987535, guid: d79196f713a913240b24190c0b4bd57f, type: 3}

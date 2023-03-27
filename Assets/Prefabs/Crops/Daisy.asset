@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
   m_Name: Daisy
   m_EditorClassIdentifier: 
+  buyingPrice: 10
+  sellingPrice: 20
   spritePhase:
   - {fileID: -1231630412, guid: 5f40b32f2f8223f4ba1cc8f0d2e9fd7d, type: 3}
   - {fileID: 1934869832, guid: 5f40b32f2f8223f4ba1cc8f0d2e9fd7d, type: 3}
@@ -19,6 +21,4 @@ MonoBehaviour:
   - {fileID: 2079392265, guid: 5f40b32f2f8223f4ba1cc8f0d2e9fd7d, type: 3}
   plantName: Daisy
   plantDescription: 
-  buyingValue: 0
-  sellingValue: 0
   growthTime: 10

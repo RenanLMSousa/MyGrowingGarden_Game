@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75373a2fee1fdad4d8db9823707fe264, type: 3}
   m_Name: Clay Pot
   m_EditorClassIdentifier: 
+  buyingPrice: 10
+  sellingPrice: 8
   vaseSprite: {fileID: 21300000, guid: e047a1a89e4b2634ab0dd51c3c5946fe, type: 3}
   vaseName: Clay  Pot
   vaseDescription: 
-  buyingValue: 0
-  sellingValue: 0

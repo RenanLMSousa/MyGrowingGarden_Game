@@ -16,7 +16,7 @@ public class Shop
     }
     public void BuyItem(Item item,IBuyer buyer, int ammount = 1)
     {
-        if (buyer.CanBuy(item.GetSellingPrice() * ammount))
+        if (buyer.CanBuy(item.GetBuyingPrice() * ammount))
         {
             buyer.BuyItem(item, ammount);
         }

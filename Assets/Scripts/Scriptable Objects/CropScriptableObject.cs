@@ -12,6 +12,6 @@ public class CropScriptableObject : ItemScriptableObject
 
     public override Sprite GetItemSprite()
     {
-        return spritePhase[0];
+        return spritePhase[spritePhase.Count -1];
     }
 }
