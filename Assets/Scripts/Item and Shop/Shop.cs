@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop
+public class Shop : MonoBehaviour
 {   //Handles shop logic - There can be unilimted ammounts of shops, each will keep its Own stock
     public delegate void Notify();  // delegate
     public event Notify StockChanged; // event
-    public  List<Item> AvailableItems = new List<Item>();
+    public ItemListType AvailableItems;
+    public ShopStockScriptableObject shopStockScriptableObject;
 
-
-    public Shop(List<Item> AvailableItems)
+    public void Awake()
     {
-        this.AvailableItems = AvailableItems;
+        foreach(Item item in shopStockScriptableObject.itemStock)
+        {
+            AvailableItems.itemList.Add(item);
+        }
     }
     public void BuyItem(Item item,IBuyer buyer, int ammount = 1)
     {
@@ -23,7 +26,7 @@ public class Shop
     }
     public void UpdateStock(List<Item> newAvailableItems)
     {   //Changes stock
-        this.AvailableItems = newAvailableItems;
+      
         OnStockChanged();
     }
     public void OnStockChanged()

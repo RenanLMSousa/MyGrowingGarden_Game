@@ -8,17 +8,13 @@ public class ShopGrid
 {
     public UIShopGridElement gridElementPrefab;
     public GameObject itemGrid;
-    
-    [HideInInspector]
-    public Shop shop;
+
+    public ItemListType itemList;
     [HideInInspector]
     public List<UIShopGridElement> itemGridElementList;
-    public ShopStockScriptableObject shopStockScriptableObject;
 
-    public ShopGrid shopGrid;
 
-    
-
+   
 
 
 }
@@ -26,14 +22,8 @@ public class UIShop : MonoBehaviour
 {
     public ShopGrid shopGrid;
 
-    void Awake()
-    {
 
-        shopGrid.shop = new Shop(shopGrid.shopStockScriptableObject.itemStock);
-        shopGrid.shop.StockChanged += OnStockChanged;
-
-    }
-    private void Start()
+    void Start()
     {
         InitializeGridElements();
         OnStockChanged();
@@ -44,14 +34,14 @@ public class UIShop : MonoBehaviour
         for (int i = 0; i < shopGrid.itemGridElementList.Count; i++)
         {
             UIShopGridElement gridElement = shopGrid.itemGridElementList[i];
-            Item item = shopGrid.shop.AvailableItems[i];
+            Item item = shopGrid.itemList.itemList[i];
             ChangeGridElementDisplay(gridElement, item);
 
         }
     }
     void InitializeGridElements()
     {   //Creates the grid elements, one for each item
-        for (int i = 0; i < shopGrid.shop.AvailableItems.Count; i++)
+        for (int i = 0; i < shopGrid.itemList.itemList.Count; i++)
         {
             CreateNewGridElement();
         }

@@ -12,9 +12,17 @@ public class ItemListType : ScriptableObject
 
     private void OnEnable()
     {
-        foreach(Item item in _itemList)
+        try
         {
-            itemList.Add(item);
+            foreach (Item item in _itemList)
+            {
+                itemList.Add(item);
+            }
+        }
+        catch
+        {
+            Debug.Log("Empty item type");
         }
     }
+  
 }
