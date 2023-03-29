@@ -10,7 +10,9 @@ public class Player : ScriptableObject, IBuyer
     public float money;
     public void BuyItem(Item item, int ammount)
     {
-        throw new System.NotImplementedException();
+        
+        this.money -= item.GetBuyingPrice() * ammount;
+        inventory.AddToInventory(item, ammount);
     }
 
     public bool CanBuy(float price)

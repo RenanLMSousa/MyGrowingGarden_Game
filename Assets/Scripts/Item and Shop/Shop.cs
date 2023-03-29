@@ -17,13 +17,6 @@ public class Shop : MonoBehaviour
             AvailableItems.itemList.Add(item);
         }
     }
-    public void BuyItem(Item item,IBuyer buyer, int ammount = 1)
-    {
-        if (buyer.CanBuy(item.GetBuyingPrice() * ammount))
-        {
-            buyer.BuyItem(item, ammount);
-        }
-    }
     public void UpdateStock(List<Item> newAvailableItems)
     {   //Changes stock
       

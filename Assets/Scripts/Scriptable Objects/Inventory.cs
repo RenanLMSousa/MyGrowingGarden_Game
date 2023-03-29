@@ -17,10 +17,23 @@ public class InventorySlot
 public class Inventory : ScriptableObject, IInventory
 {
 
-    public List<InventorySlot> inventorySlots;
+    public InventorySlotListType inventorySlots;
     public void AddToInventory(Item item, int ammount)
     {
-        throw new System.NotImplementedException();
+        for(int i = 0; i < inventorySlots.list.Count; i++)
+        {
+            if(inventorySlots.list[i].item == item)
+            {
+                inventorySlots.list[i].ammount += ammount;
+                Debug.Log((inventorySlots.list[i].item.GetName(), inventorySlots.list[i].ammount));
+                return;
+            }
+        }
+        inventorySlots.list.Add(new InventorySlot(item, 1));
+        foreach (InventorySlot slot in inventorySlots.list)
+        {
+            Debug.Log((slot.item.GetName(), slot.ammount));
+        }
     }
 
     public void RemoveFromInventory(Item item, int ammount)

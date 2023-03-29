@@ -13,7 +13,7 @@ public abstract class UIShopGridElement : MonoBehaviour
 
 
 
-
+    [HideInInspector]
     public ItemScriptableObject itemScriptableObject;
 
     public abstract void DisplayItem(Item item);

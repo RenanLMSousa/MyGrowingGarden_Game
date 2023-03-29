@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 3255984578121616194}
   - component: {fileID: 2547725871036280462}
   - component: {fileID: 4137529793725658585}
-  - component: {fileID: 2667001603214692467}
   - component: {fileID: 8765389701323843292}
   m_Layer: 5
   m_Name: VaseItemTemplate
@@ -217,18 +216,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2667001603214692467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4436747327675854102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23402b1708fa76e41b25f5663aff3b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8765389701323843292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +231,7 @@ MonoBehaviour:
   txtBuyingPrice: {fileID: 3778726027078481417}
   txtName: {fileID: 2824309324623057195}
   itemImage: {fileID: 5062696430176526586}
+  itemScriptableObject: {fileID: 0}
 --- !u!1 &7305114208685794712
 GameObject:
   m_ObjectHideFlags: 0

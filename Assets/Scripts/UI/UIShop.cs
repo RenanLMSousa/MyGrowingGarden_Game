@@ -19,7 +19,9 @@ public class ShopGrid
 
 }
 public class UIShop : MonoBehaviour
-{
+{//This class does not require the shop script, but does need an ItemListType to create the shop interface
+
+
     public ShopGrid shopGrid;
 
 
@@ -56,5 +58,6 @@ public class UIShop : MonoBehaviour
         shopGrid.itemGridElementList.Add(_gridElement);
         _gridElement.transform.SetParent(shopGrid.itemGrid.transform);
         _gridElement.transform.localScale = new Vector3(1, 1, 1);
+
     }
 }
