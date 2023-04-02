@@ -23,7 +23,7 @@ public class UIShopCropGridElement : UIShopGridElement, IPointerClickHandler
     {
         Debug.Log(this.item.GetName());
         //Change sometime in the future
-        GameManager.gameManager.player.BuyItem(item, 1);
+        buyer.BuyItem(item, 1);
         
        
     }

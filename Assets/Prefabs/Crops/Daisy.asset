@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyingPrice: 10
   sellingPrice: 20
+  tier: 1
+  description: 
+  itemName: Daisy
   spritePhase:
   - {fileID: -1231630412, guid: 5f40b32f2f8223f4ba1cc8f0d2e9fd7d, type: 3}
   - {fileID: 1934869832, guid: 5f40b32f2f8223f4ba1cc8f0d2e9fd7d, type: 3}
   - {fileID: 1232619090, guid: 5f40b32f2f8223f4ba1cc8f0d2e9fd7d, type: 3}
   - {fileID: 2079392265, guid: 5f40b32f2f8223f4ba1cc8f0d2e9fd7d, type: 3}
-  plantName: Daisy
-  plantDescription: 
   growthTime: 10

@@ -10,6 +10,7 @@ public abstract class UIShopGridElement : MonoBehaviour
     public TMP_Text txtName;
     public Image itemImage;
     public Item item;
+    public Player buyer;
 
 
 

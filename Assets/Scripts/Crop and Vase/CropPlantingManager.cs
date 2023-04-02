@@ -7,6 +7,7 @@ public class CropVasePair
 {   //Represents the Crop and vase relation, there can be a vase without a crop but not the opposite
     public Crop crop;
     public Vase vase;
+    public Vector3 plantingPosition;
 
     public CropVasePair(Crop crop= null, Vase vase = null)
     {
@@ -20,7 +21,7 @@ public class CropVasePair
 
 
 }
-public class CropPlantingManager 
+public class CropPlantingManager
 {
 
     public static List<CropVasePair> ownedSpots = new List<CropVasePair>();
@@ -28,6 +29,7 @@ public class CropPlantingManager
 
 
     public static void PlantCropOnVase(CropVasePair plantVase) {
+        plantVase.vase.transform.position = plantVase.plantingPosition;
         ownedSpots.Add(plantVase);
         plantVase.crop.transform.position = plantVase.vase.GetVaseTop();
         plantVase.crop.SetIsPlanted(true);

@@ -6,10 +6,17 @@ using UnityEngine;
 public class Vase : MonoBehaviour
 {
     [SerializeField]
-    private VaseScriptableObject vaseScriptableObject;
+    public VaseScriptableObject vaseScriptableObject;
     private bool isPlantedOn;
 
-    private void Awake()
+    public void SetVaseType(VaseScriptableObject vaseScriptableObject)
+
+    {
+        this.vaseScriptableObject = vaseScriptableObject;
+        OnAwake();
+
+    }
+    public void OnAwake()
     {
         this.GetComponent<SpriteRenderer>().sprite = vaseScriptableObject.vaseSprite;
         isPlantedOn = false;
@@ -26,6 +33,10 @@ public class Vase : MonoBehaviour
     public Vector2 GetVaseTop()
     {   //Return the position where the plant should grow
         return this.transform.position + new Vector3(0,1,0);
+    }
+    public Sprite getSprite()
+    {
+        return vaseScriptableObject.vaseSprite;
     }
 
 }

@@ -6,8 +6,7 @@ using UnityEngine;
 public class VaseScriptableObject : ItemScriptableObject
 {
     public Sprite vaseSprite;
-    public string vaseName;
-    public string vaseDescription;
+
 
     public override Sprite GetItemSprite()
     {

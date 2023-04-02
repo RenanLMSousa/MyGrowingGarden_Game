@@ -7,11 +7,11 @@ public class Player : ScriptableObject, IBuyer
 {
     public string playerName;
     public Inventory inventory;
-    public float money;
+    public FloatType money;
     public void BuyItem(Item item, int ammount)
     {
         
-        this.money -= item.GetBuyingPrice() * ammount;
+        this.money.floatValue -= item.GetBuyingPrice() * ammount;
         inventory.AddToInventory(item, ammount);
     }
 

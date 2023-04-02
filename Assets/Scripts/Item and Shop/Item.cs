@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Item
 {
+    int tier = 0;
     float buyingPrice = 0;
     float sellingPrice = 0;
     string name;
     Sprite sprite;
+    string description;
     public ItemScriptableObject ItemScriptableObject;
 
     public Item(ItemScriptableObject itemScriptableObject) {
         this.ItemScriptableObject = itemScriptableObject;
         this.buyingPrice = itemScriptableObject.buyingPrice;
         this.sellingPrice = itemScriptableObject.sellingPrice;
-        this.name = itemScriptableObject.name;
+        this.name = itemScriptableObject.itemName;
         this.sprite = itemScriptableObject.GetItemSprite();
+        this.tier = itemScriptableObject.tier;
+        this.description = itemScriptableObject.description;
             }
     public float GetBuyingPrice()
     {
@@ -29,6 +33,10 @@ public class Item
     public Sprite GetSprite()
     {
         return this.sprite;
+    }
+    public int GetTier()
+    {
+        return this.tier;
     }
     /*
         public float GetSellingPrice()

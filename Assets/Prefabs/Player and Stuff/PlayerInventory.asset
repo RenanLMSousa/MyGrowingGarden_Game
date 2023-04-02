@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9370ec4fe84822d4ca9ddd2089304878, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 48b38f3e2c7ad16479904669db08dd22, type: 3}
+  m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  playerName: Urubuntu
-  inventory: {fileID: 11400000, guid: 039df6d70548e6d42ab7f9091bbc214e, type: 2}
-  money: {fileID: 11400000, guid: e8969704f84df0241b68e10b6ff8634c, type: 2}
+  inventorySlots: {fileID: 11400000, guid: 3e0f5fafc7c11534ea0c60f97fa04a40, type: 2}

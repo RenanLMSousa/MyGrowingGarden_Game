@@ -6,8 +6,6 @@ using UnityEngine;
 public class CropScriptableObject : ItemScriptableObject
 {
     public List<Sprite> spritePhase;
-    public string plantName;
-    public string plantDescription;
     public float growthTime;
 
     public override Sprite GetItemSprite()

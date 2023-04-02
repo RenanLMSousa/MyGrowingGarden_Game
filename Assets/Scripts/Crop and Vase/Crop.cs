@@ -30,7 +30,10 @@ public class Crop:MonoBehaviour
     void Update()
     {
         IncrementTime();
-        OnStageChanged();
+        if (this.growingTime < cropScriptableObject.growthTime)
+        {
+            OnStageChanged();
+        }
     }
 
     public void SetIsPlanted(bool isPlanted)
@@ -92,5 +95,9 @@ public class Crop:MonoBehaviour
     private bool IsGrown()
     {   //Checks if the plant is grown
         return cropScriptableObject.growthTime < this.growingTime;
+    }
+    public Sprite getGrownSprite()
+    {
+        return cropScriptableObject.spritePhase[cropScriptableObject.spritePhase.Count - 1];
     }
 }
