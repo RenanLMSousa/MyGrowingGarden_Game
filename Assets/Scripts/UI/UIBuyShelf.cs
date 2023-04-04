@@ -31,4 +31,5 @@ public class UIBuyShelf : MonoBehaviour , IPointerClickHandler
         _go.transform.SetParent(this.transform.parent);
         _shelf.GetComponent<PlantingSpotManager>().UIInteractiveArea = _go;
     }
+
 }

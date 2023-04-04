@@ -16,7 +16,7 @@ public class UIShopVaseGridElement : UIShopGridElement , IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(this.item.GetName());
+        Debug.LogWarning("Direct player reference");
 
         //Change sometime in the future
         buyer.BuyItem(item, 1);

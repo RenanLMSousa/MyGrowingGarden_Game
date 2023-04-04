@@ -28,7 +28,9 @@ public class OnCropCardClick : MonoBehaviour , IPointerClickHandler
 
             PlantingSpotManager.currentPlantingSpot.setCrop((CropScriptableObject)item.ItemScriptableObject);
             this.inventory.RemoveFromInventory(item, 1);
+            this.gameObject.transform.parent.parent.gameObject.SetActive(false);
             onClickEvent.Raise();
+            
         }
     }
 }

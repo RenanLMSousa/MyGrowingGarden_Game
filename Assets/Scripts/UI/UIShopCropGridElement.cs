@@ -21,8 +21,9 @@ public class UIShopCropGridElement : UIShopGridElement, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(this.item.GetName());
+
         //Change sometime in the future
+        Debug.LogWarning("Direct player reference");
         buyer.BuyItem(item, 1);
         
        

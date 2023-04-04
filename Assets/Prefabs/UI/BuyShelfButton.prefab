@@ -222,4 +222,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b88120c7e3b7e34689943ab49ec3250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShelfPrefab: {fileID: 8227553274248447137, guid: 8d2653a212ee0c1469b525c76fed5b41, type: 3}
+  PlantingSpotPrefab: {fileID: 366429001783555660, guid: 3b9999f58c7882d4c835b19e26f46d37, type: 3}
+  UIInteracteableAreaPrefab: {fileID: 6767805745470221081, guid: 710b39a6e1dfd6549960381b32bb4f3c, type: 3}

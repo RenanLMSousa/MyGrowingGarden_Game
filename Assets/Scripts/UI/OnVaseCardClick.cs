@@ -25,6 +25,7 @@ public class OnVaseCardClick : MonoBehaviour , IPointerClickHandler
         
         PlantingSpotManager.currentPlantingSpot.setVase((VaseScriptableObject)item.ItemScriptableObject);
         this.inventory.RemoveFromInventory(item, 1);
+        this.gameObject.transform.parent.parent.gameObject.SetActive(false);
         onClickEvent.Raise();
         
     }

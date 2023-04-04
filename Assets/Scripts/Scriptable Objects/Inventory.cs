@@ -30,10 +30,6 @@ public class Inventory : ScriptableObject, IInventory
             }
         }
         inventorySlots.list.Add(new InventorySlot(item, 1));
-        foreach (InventorySlot slot in inventorySlots.list)
-        {
-            Debug.Log((slot.item.GetName(), slot.ammount));
-        }
     }
 
     public void RemoveFromInventory(Item item, int ammount)

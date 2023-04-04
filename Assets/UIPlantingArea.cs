@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
-public class UIPlantingArea : MonoBehaviour , IPointerDownHandler
+public class UIPlantingArea : MonoBehaviour , IPointerClickHandler
 {
     [HideInInspector]
     public PlantingSpot plantingSpot;
     public GameEvent onClick;
     public TMP_Text txtCountdown;
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
 
        

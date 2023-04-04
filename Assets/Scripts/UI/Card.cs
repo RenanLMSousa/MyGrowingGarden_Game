@@ -16,6 +16,7 @@ public abstract class Card : MonoBehaviour
     public GameEvent onPlantAreaChange;
 
     protected abstract void UpdateCardSpecific();
+
     public void UpdateCard()
     {
        
