@@ -6,7 +6,8 @@ using UnityEngine;
 public class VaseScriptableObject : ItemScriptableObject
 {
     public Sprite vaseSprite;
-
+    public float growthAcceleration;
+    public float productionMultiplier;
 
     public override Sprite GetItemSprite()
     {

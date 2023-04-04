@@ -22,7 +22,7 @@ public class Inventory : ScriptableObject, IInventory
     {
         for(int i = 0; i < inventorySlots.list.Count; i++)
         {
-            if(inventorySlots.list[i].item == item)
+            if(inventorySlots.list[i].item.ItemScriptableObject == item.ItemScriptableObject)
             {
                 inventorySlots.list[i].ammount += ammount;
                 Debug.Log((inventorySlots.list[i].item.GetName(), inventorySlots.list[i].ammount));
@@ -38,6 +38,18 @@ public class Inventory : ScriptableObject, IInventory
 
     public void RemoveFromInventory(Item item, int ammount)
     {
-        throw new System.NotImplementedException();
+        for (int i = 0; i < inventorySlots.list.Count; i++)
+        {
+            if (inventorySlots.list[i].item.ItemScriptableObject == item.ItemScriptableObject)
+            {
+                inventorySlots.list[i].ammount -= ammount;
+                Debug.Log((inventorySlots.list[i].item.GetName(), inventorySlots.list[i].ammount));
+                if(inventorySlots.list[i].ammount <= 0)
+                {
+                    inventorySlots.list.Remove(inventorySlots.list[i]);
+                }
+                return;
+            }
+        }
     }
 }

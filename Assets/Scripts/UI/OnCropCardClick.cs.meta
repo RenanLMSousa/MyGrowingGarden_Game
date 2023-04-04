@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 976e51091cf7e0a45b27fd05ef0c4d52
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - selectedCropVase: {fileID: 11400000, guid: ec7e59b824402d949ab2383f0cf8b875, type: 2}
+  - vasePrefab: {fileID: 4075512581480251471, guid: 6b335ec1f40e7e746ab7cf321991caa9, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

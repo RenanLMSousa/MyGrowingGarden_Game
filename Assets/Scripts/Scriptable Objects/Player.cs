@@ -10,19 +10,19 @@ public class Player : ScriptableObject, IBuyer
     public FloatType money;
     public void BuyItem(Item item, int ammount)
     {
-        
+        if (!CanBuy(item.GetBuyingPrice()*ammount)) return;
         this.money.floatValue -= item.GetBuyingPrice() * ammount;
         inventory.AddToInventory(item, ammount);
     }
 
     public bool CanBuy(float price)
     {
-        throw new System.NotImplementedException();
+        return (this.money.floatValue - price) >= 0;
     }
 
     public float GetMoney()
     {
-        throw new System.NotImplementedException();
+        return money.floatValue;
     }
 
     public void SellItem(Item item, int ammount)
@@ -32,6 +32,10 @@ public class Player : ScriptableObject, IBuyer
 
     public void SetMoney(float money)
     {
-        throw new System.NotImplementedException();
+        this.money.floatValue = money;
+    }
+    public void DropItem(Item item, int ammount)
+    {
+        inventory.RemoveFromInventory(item, ammount);
     }
 }
