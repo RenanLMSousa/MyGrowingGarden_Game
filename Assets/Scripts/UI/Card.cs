@@ -8,6 +8,7 @@ public abstract class Card : MonoBehaviour
 {
     protected Item item;
 
+
     public Image imgImage;
     public TMP_Text txtName;
     public TMP_Text txtTier;
@@ -45,6 +46,10 @@ public abstract class Card : MonoBehaviour
     public Item GetItem()
     {
         return this.item;
+    }
+    public ItemScriptableObject GetItemSo()
+    {
+        return this.item.ItemScriptableObject;
     }
 
 

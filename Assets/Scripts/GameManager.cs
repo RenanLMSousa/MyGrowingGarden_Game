@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
 
         TimeSpan timeSpan = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0);
-        float unixVersion = (float)timeSpan.TotalSeconds;
+        double unixVersion = (double)timeSpan.TotalSeconds;
 
         SaveSystem.SaveState(player,unixVersion,PlantingSpotManager.ownedPlantingSpots);
     }
@@ -36,10 +36,10 @@ public class GameManager : MonoBehaviour
         SaveState saveState = SaveSystem.LoadState();
 
         TimeSpan timeSpan = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0);
-        float currentTime = (float)timeSpan.TotalSeconds;
-        float timePassed = currentTime  - saveState.timeOnClose;
+        double currentTime = (double)timeSpan.TotalSeconds;
+        double timePassed = currentTime  - saveState.timeOnClose;
         player.playerName = saveState.playerName;
-
+        Debug.Log(timePassed.ToString() + "seconds passed!");
         player.SetMoney(saveState.playerMoney);
         for(int i = 0; i < saveState.plantingSpotsOwned; i++)
         {
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
             CropScriptableObject cropSO = Resources.Load(saveState.cropsOnPlantingSpots[i]) as CropScriptableObject;
             plantingSpot.setCrop(cropSO);
-            plantingSpot.crop.SetGrowingTime(plantingSpot.crop.GetGrowingTime() + timePassed );
+            plantingSpot.crop.SetGrowingTime((float)(plantingSpot.crop.GetGrowingTime() + timePassed));
         }
 
         for(int i =0; i < saveState.inventoryItem.Count; i++)

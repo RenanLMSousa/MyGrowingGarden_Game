@@ -8,8 +8,8 @@ public class UIBackGroundScroll : MonoBehaviour, IDragHandler ,IBeginDragHandler
     private Vector3 camStartPos;
 
     [HideInInspector]
-    public float minY = int.MinValue;
-    public float maxY = int.MaxValue;
+    private float minY = int.MinValue;
+    private float maxY = int.MaxValue;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class UIBackGroundScroll : MonoBehaviour, IDragHandler ,IBeginDragHandler
 
         float Ypos = (camStartPos - camDiff).y;
 
-        Ypos = Mathf.Min(Ypos, maxY);
+        Ypos = Mathf.Min(Ypos, GetMaxY());
         Ypos = Mathf.Max(Ypos, minY);
 
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Ypos, Camera.main.transform.position.z); ;
@@ -42,5 +42,10 @@ public class UIBackGroundScroll : MonoBehaviour, IDragHandler ,IBeginDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         startDragPosY = 0;
+    }
+
+    public float GetMaxY()
+    {
+        return (PlantingSpotManager.ownedPlantingSpots.Count / 2 - 1) * PlantingSpotManager.yDistance;
     }
 }

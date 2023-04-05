@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 public static class SaveSystem 
 {
-    public static void SaveState(Player player, float timeOnClose, List<PlantingSpot> ownedPlantingSpots)
+    public static void SaveState(Player player, double timeOnClose, List<PlantingSpot> ownedPlantingSpots)
     {
-        SaveState saveState = new SaveState(player, 100, PlantingSpotManager.ownedPlantingSpots);
+        SaveState saveState = new SaveState(player, timeOnClose, PlantingSpotManager.ownedPlantingSpots);
         string saveString = JsonUtility.ToJson(saveState);
         File.WriteAllText(Application.dataPath + "/save.txt", saveString);
         Debug.Log("File saved in + "+  Application.dataPath + "/save.txt");

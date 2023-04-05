@@ -11,7 +11,7 @@ public class SaveState
     public int plantingSpotsOwned;
     public string playerName;
 
-    public float timeOnClose;
+    public double timeOnClose;
 
     public List<string> vasesOnPlantingSpots;
     public List<string> cropsOnPlantingSpots;
@@ -21,12 +21,12 @@ public class SaveState
     public List<int> inventoryAmmount;
 
 
-    public SaveState(Player player, float timeOnClose,List<PlantingSpot> ownedPlantingSpots)
+    public SaveState(Player player, double timeOnClose,List<PlantingSpot> ownedPlantingSpots)
     {
         this.playerName = player.playerName;
         this.playerMoney = player.GetMoney();
         this.plantingSpotsOwned = ownedPlantingSpots.Count;
-        this.timeOnClose = Mathf.Max(timeOnClose , 0);
+        this.timeOnClose = timeOnClose;
 
         vasesOnPlantingSpots = new List<string>();
         cropsOnPlantingSpots = new List<string>();
