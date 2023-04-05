@@ -12,14 +12,24 @@ public class Vase : MonoBehaviour
     public float productionMultiplier;
     public float growthAcceleration;
 
-    public void SetVase(VaseScriptableObject vaseScriptableObject)
-
+    public void SetNull()
     {
-        this.vaseScriptableObject = vaseScriptableObject;
-        if(vaseScriptableObject != null) {
-            productionMultiplier = vaseScriptableObject.productionMultiplier;
-            growthAcceleration = vaseScriptableObject.growthAcceleration;
+        this.vaseScriptableObject = null;
+        this.isPlantedOn = false;
+        this.productionMultiplier = 1;
+        this.growthAcceleration = 1;
+        this.GetComponent<SpriteRenderer>().sprite = null;
+    }
+    public void SetVase(VaseScriptableObject vaseScriptableObject)
+    {
+        if(vaseScriptableObject == null) { 
+            SetNull();
+            return;
         }
+        this.vaseScriptableObject = vaseScriptableObject;  
+        productionMultiplier = vaseScriptableObject.productionMultiplier;
+        growthAcceleration = vaseScriptableObject.growthAcceleration;
+
         OnAwake();
 
     }
@@ -52,5 +62,10 @@ public class Vase : MonoBehaviour
     public float GetProductionMultiplier()
     {
         return this.productionMultiplier;
+    }
+    public string GetSOName()
+    {
+        
+        return vaseScriptableObject == null ? null : vaseScriptableObject.name;
     }
 }

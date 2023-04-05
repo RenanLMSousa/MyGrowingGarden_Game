@@ -38,6 +38,10 @@ public class Item
     {
         return this.tier;
     }
+    public string GetSOName()
+    {
+        return ItemScriptableObject == null? null : ItemScriptableObject.name;
+    }
     /*
         public float GetSellingPrice()
     {

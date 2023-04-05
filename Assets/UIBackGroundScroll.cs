@@ -7,11 +7,13 @@ public class UIBackGroundScroll : MonoBehaviour, IDragHandler ,IBeginDragHandler
     private float startDragPosY;
     private Vector3 camStartPos;
 
+    [HideInInspector]
     public float minY = int.MinValue;
     public float maxY = int.MaxValue;
 
     private void Awake()
     {
+        minY = Camera.main.transform.position.y;
         startDragPosY = 0;
         camStartPos = Camera.main.transform.position;
     }

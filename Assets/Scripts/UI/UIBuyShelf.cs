@@ -4,32 +4,34 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class UIBuyShelf : MonoBehaviour , IPointerClickHandler
 {
-    public GameObject PlantingSpotPrefab;
+    public PlantingSpot PlantingSpotPrefab;
     public GameObject UIInteracteableAreaPrefab;
+    public Vector3 startPos;
 
+    private void Awake()
+    {
+        startPos = this.transform.position;
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        InstantiatePrefab(new Vector3(1.5f, 0, 0));
-        InstantiatePrefab(new Vector3(-1.5f, 0, 0));
-        this.transform.position += Vector3.up * 4;
+        InstantiatePrefab();
+        InstantiatePrefab();
+       
 
 
     }
 
-    public void InstantiatePrefab(Vector3 translation) {
+    public void Update()
+    {
+        this.transform.position = startPos + (PlantingSpotManager.ownedPlantingSpots.Count/2) * PlantingSpotManager.yDistance* new Vector3(0,1,0);
+    }
 
-        GameObject _shelf = Instantiate(PlantingSpotPrefab);
-        _shelf.transform.position = this.transform.position + translation;
-        
+    public void InstantiatePrefab() {
 
-        GameObject _go = Instantiate(UIInteracteableAreaPrefab);
-        _go.transform.position = this.transform.position + translation;
 
-        _go.GetComponent<UIPlantingArea>().plantingSpot = _shelf.GetComponent<PlantingSpot>();
-
-        _go.transform.SetParent(this.transform.parent);
-        _shelf.GetComponent<PlantingSpotManager>().UIInteractiveArea = _go;
+        PlantingSpotManager.InstantiatePlantingSpotWithUI( PlantingSpotPrefab,UIInteracteableAreaPrefab, this.transform.parent);
+      
     }
 
 }

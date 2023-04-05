@@ -57,10 +57,8 @@ public class Crop:MonoBehaviour
 
 
             IncrementTime();
-            if (this.growingTime < GetGrowthTime())
-            {
-                OnStageChanged();
-            }
+            OnStageChanged();
+
         }
         else
         { //Debug.Log("Tem que verificar se o SO não é nulo"); 
@@ -89,12 +87,13 @@ public class Crop:MonoBehaviour
     }
     public void OnStageChanged()
     {//When the plant changes it's growth stage this functions updates it's sprite
+        if (currentStage >= totalStages) { return; }
         int _growingStage = GetStageFromTime(growingTime);
-
+        
         if (this.currentStage != _growingStage)
         {
             currentStage = GetStageFromTime(growingTime);
-            this.GetComponent<SpriteRenderer>().sprite = cropScriptableObject.spritePhase[currentStage];
+            this.GetComponent<SpriteRenderer>().sprite = cropScriptableObject.spritePhase[Mathf.Min(currentStage,totalStages-1)];
         }
     }
     public bool GetIsPlanted()
@@ -153,5 +152,9 @@ public class Crop:MonoBehaviour
     public float GetGrowthTime()
     {
         return this.growthTime;
+    }
+    public string GetSOName()
+    {
+        return cropScriptableObject == null ? null : cropScriptableObject.name;
     }
 }
