@@ -599,7 +599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 2.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -723,8 +723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd81879ceb103743bb201bbd891532d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: -6
-  maxY: 2.1474836e+9
 --- !u!114 &549582436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,8 +1057,8 @@ GameObject:
   - component: {fileID: 764049713}
   - component: {fileID: 764049712}
   - component: {fileID: 764049714}
-  - component: {fileID: 764049716}
   - component: {fileID: 764049715}
+  - component: {fileID: 764049717}
   m_Layer: 5
   m_Name: Horizontal Scroll Rect (Crop)
   m_TagString: Untagged
@@ -1171,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvailableItems: {fileID: 11400000, guid: 349741995ee56a3469926f97f76e2cf9, type: 2}
   shopStockScriptableObject: {fileID: 11400000, guid: cfac0fe19eef7e64ca62c3ff32725724, type: 2}
---- !u!114 &764049716
+--- !u!114 &764049717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1180,14 +1178,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 764049710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a51c925df83eb4b948e66026ac8fca, type: 3}
+  m_Script: {fileID: 11500000, guid: fa94bf38531c1c847974611425860070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopGrid:
-    gridElementPrefab: {fileID: 4251546138836383624, guid: 6b7f3a322cae21c4f9b47148ce967562, type: 3}
-    itemGrid: {fileID: 701047171}
-    itemList: {fileID: 11400000, guid: 349741995ee56a3469926f97f76e2cf9, type: 2}
-    itemGridElementList: []
+  cardPrefab: {fileID: 3229493325379504591, guid: 23dd3c9a54fac7f4e9b51c411df51488, type: 3}
+  cardObjectParent: {fileID: 701047172}
+  stockItemList: {fileID: 11400000, guid: 349741995ee56a3469926f97f76e2cf9, type: 2}
+  cardRescale: {x: 1.5, y: 1.5, z: 1}
 --- !u!1 &777220645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,8 +2112,8 @@ GameObject:
   - component: {fileID: 1175176447}
   - component: {fileID: 1175176446}
   - component: {fileID: 1175176445}
-  - component: {fileID: 1175176449}
   - component: {fileID: 1175176448}
+  - component: {fileID: 1175176449}
   m_Layer: 5
   m_Name: Horizontal Scroll Rect (Vase)
   m_TagString: Untagged
@@ -2236,14 +2233,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1175176443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a51c925df83eb4b948e66026ac8fca, type: 3}
+  m_Script: {fileID: 11500000, guid: fa94bf38531c1c847974611425860070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopGrid:
-    gridElementPrefab: {fileID: 8765389701323843292, guid: 69132ea804d6e70489055b2abfea041c, type: 3}
-    itemGrid: {fileID: 1235310360}
-    itemList: {fileID: 11400000, guid: e959a533b93581442bb85a6d32aed46e, type: 2}
-    itemGridElementList: []
+  cardPrefab: {fileID: -5436436784316484887, guid: c1e70648d07a91e42bc6a02e4a7944d3, type: 3}
+  cardObjectParent: {fileID: 1235310361}
+  stockItemList: {fileID: 11400000, guid: e959a533b93581442bb85a6d32aed46e, type: 2}
+  cardRescale: {x: 1.5, y: 1.5, z: 11.5}
 --- !u!1 &1212178243
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,47 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[System.Serializable]
-public class ShopGrid
-{
-    public UIShopGridElement gridElementPrefab;
-    public GameObject itemGrid;
-
-    public ItemListType itemList;
-    [HideInInspector]
-    public List<UIShopGridElement> itemGridElementList;
-
-
-   
-
-
-}
 public class UIShop : MonoBehaviour
 {//This class does not require the shop script, but does need an ItemListType to create the shop interface
 
 
-    public ShopGrid shopGrid;
+
+    public Card cardPrefab; 
+    public Transform cardObjectParent;
+    public ItemListType stockItemList;
 
 
+    private List<Card> instantiatedCardsList = new List<Card>();
+
+    private void Awake()
+    {
+
+    }
     void Start()
     {
         InitializeGridElements();
-        OnStockChanged();
+        InitializeStock();
     }
-    private void OnStockChanged()
+    private void InitializeStock()
     {   //When the stock changes, updates the Grid elements
+        //TODO delete the previous elements when it changes
 
-        for (int i = 0; i < shopGrid.itemGridElementList.Count; i++)
+        for (int i = 0; i < stockItemList.itemList.Count; i++)
         {
-            UIShopGridElement gridElement = shopGrid.itemGridElementList[i];
-            Item item = shopGrid.itemList.itemList[i];
-            ChangeGridElementDisplay(gridElement, item);
+            Item _item = stockItemList.itemList[i];
+            instantiatedCardsList[i].SetItem(_item);
 
         }
     }
     void InitializeGridElements()
     {   //Creates the grid elements, one for each item
-        for (int i = 0; i < shopGrid.itemList.itemList.Count; i++)
+        for (int i = 0; i < stockItemList.itemList.Count; i++)
         {
             CreateNewGridElement();
         }
@@ -54,10 +48,11 @@ public class UIShop : MonoBehaviour
     }
     private void CreateNewGridElement()
     {   //Create a new grid element as last
-        UIShopGridElement _gridElement = MonoBehaviour.Instantiate(shopGrid.gridElementPrefab);
-        shopGrid.itemGridElementList.Add(_gridElement);
-        _gridElement.transform.SetParent(shopGrid.itemGrid.transform);
-        _gridElement.transform.localScale = new Vector3(1, 1, 1);
+        Card _gridCard = MonoBehaviour.Instantiate(cardPrefab);
+        instantiatedCardsList.Add(_gridCard);
+        _gridCard.transform.SetParent(cardObjectParent);
+        _gridCard.transform.localScale = new Vector3(1, 1, 1);
+        _gridCard.gameObject.AddComponent<ShopCardOnClick>();
 
     }
 }

@@ -15,7 +15,12 @@ public class CropCard : Card
             txtSellingPrice.text = cropSO.sellingPrice.ToString();
             txtGrowthTime.text = cropSO.growthTime.ToString();
         }
-        txtGrowthTime.text = "";
-        txtSellingPrice.text = "";
+        else
+        {
+            txtGrowthTime.text = "";
+            txtSellingPrice.text = "";
+
+        }
+
     }
 }
