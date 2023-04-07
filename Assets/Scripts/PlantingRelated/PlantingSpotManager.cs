@@ -19,10 +19,10 @@ public class PlantingSpotManager : MonoBehaviour
     private static float startingX = 0;
     private static float startingY = 0;
 
-    private void Awake()
-    {
-        player = GameManager.gameManager.player;
-    }
+
+    private static float BASEPRICE = 100;
+
+  
     public static void HarvestPlant(PlantingSpot plantingSpot)
     {
         player.SetMoney(player.GetMoney() + plantingSpot.crop.GetSellingValue());
@@ -34,6 +34,10 @@ public class PlantingSpotManager : MonoBehaviour
     {
         ownedPlantingSpots.Add(plantingSpot);
         
+    }
+    private Player GetPlayer()
+    {
+        return GameManager.gameManager.player;
     }
     public static PlantingSpot InstantiatePlantingSpot(PlantingSpot plantingSpotPrefab)
     {
@@ -62,8 +66,19 @@ public class PlantingSpotManager : MonoBehaviour
 
         
     }
+    public static void BuySpot(PlantingSpot plantingSpotPrefab, GameObject UIInteracteableAreaPrefab, Transform UIInteracteableAreaPrefabParent)
+    {
 
-
+        if (GetNextSpotPrice() <= player.GetMoney())
+        {
+            player.SetMoney(player.GetMoney() - GetNextSpotPrice());
+            InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
+        }
+    }
+    public static float GetNextSpotPrice()
+    {
+        return BASEPRICE*ownedPlantingSpots.Count;
+    }
 
 
 }

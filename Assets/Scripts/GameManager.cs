@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
+        Application.targetFrameRate = 61;
+        PlantingSpotManager.player = this.player;
         gameManager = this;
     }
 
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
     {
         
         SaveState saveState = SaveSystem.LoadState();
+        if(saveState == null) { return; }
+
 
         TimeSpan timeSpan = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0);
         double currentTime = (double)timeSpan.TotalSeconds;

@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class PlantingSpot : MonoBehaviour
+using UnityEngine.EventSystems;
+public class PlantingSpot : MonoBehaviour ,IPointerClickHandler
 {   //Represents the Crop and vase relation, there can be a vase without a crop but not the opposite
     public Crop crop;
     public Vase vase;
@@ -32,6 +33,8 @@ public class PlantingSpot : MonoBehaviour
 
     }
 
-
-
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("@");
+    }
 }
