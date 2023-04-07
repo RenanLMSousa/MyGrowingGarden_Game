@@ -6,5 +6,5 @@ using UnityEngine;
 public class FloatType : ScriptableObject
 {
 
-    public float floatValue = 0;
+    public float floatValue = 100;
 }

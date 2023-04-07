@@ -1,1 +1,1 @@
-{"playerMoney":40.0,"plantingSpotsOwned":5,"playerName":"Urubuntu","timeOnClose":1680842030.9833203,"vasesOnPlantingSpots":["Clay Vase","Clay Vase","Cardboard Vase","",""],"cropsOnPlantingSpots":["Daisy","Daisy","Daisy","",""],"cropsGrowthTime":[5.0,5.0,10.0,4.766576766967773,4.766576766967773],"inventoryItem":["Daisy"],"inventoryAmmount":[1]}
+{"playerMoney":30.0,"plantingSpotsOwned":0,"playerName":"Urubuntu","timeOnClose":1680888969.1607736,"vasesOnPlantingSpots":[],"cropsOnPlantingSpots":[],"cropsGrowthTime":[],"inventoryItem":[],"inventoryAmmount":[]}

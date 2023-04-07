@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject UIInteracteableAreaPrefab;
     public Transform UIInteracteableAreaPrefabParent;
 
-    
+    private float TimeSinceLastSave = 0;
     private void Awake()
     {
         Application.targetFrameRate = 61;
@@ -23,6 +23,23 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LoadState();
+    }
+
+    private void Update()
+    {
+        TimeSinceLastSave += Time.deltaTime;
+        if (TimeSinceLastSave >= 30f)
+        {
+            SaveState();
+            TimeSinceLastSave = 0f;
+        }
+    }
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SaveState();
+        }
     }
     public void SaveState()
     {
