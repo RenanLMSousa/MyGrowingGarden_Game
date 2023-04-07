@@ -73,6 +73,7 @@ public class PlantingSpotManager : MonoBehaviour
         {
             player.SetMoney(player.GetMoney() - GetNextSpotPrice());
             InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
+            InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
         }
     }
     public static float GetNextSpotPrice()

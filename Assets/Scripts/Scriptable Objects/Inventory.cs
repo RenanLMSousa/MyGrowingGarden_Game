@@ -30,7 +30,7 @@ public class Inventory : ScriptableObject, IInventory
                 return;
             }
         }
-        inventorySlots.list.Add(new InventorySlot(item, 1));
+        inventorySlots.list.Add(new InventorySlot(item, ammount));
     }
 
     public void RemoveFromInventory(Item item, int ammount)

@@ -14,6 +14,8 @@ public abstract class Card : MonoBehaviour
     public TMP_Text txtTier;
     public TMP_Text txtDescription;
 
+    public TMP_Text txtAmmount;
+
     public GameEvent onPlantAreaChange;
 
     protected abstract void UpdateCardSpecific();
@@ -51,6 +53,12 @@ public abstract class Card : MonoBehaviour
     {
         return this.item.ItemScriptableObject;
     }
+    public void SetAmmount(int ammount)
+    {
 
+        txtAmmount.text = ammount.ToString();
+        
+
+    }
 
 }

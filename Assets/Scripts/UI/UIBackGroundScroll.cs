@@ -9,7 +9,7 @@ public class UIBackGroundScroll : MonoBehaviour, IDragHandler ,IBeginDragHandler
 
     [HideInInspector]
     private float minY = int.MinValue;
-    private float maxY = int.MaxValue;
+    //private float maxY = int.MaxValue;
 
     private void Awake()
     {

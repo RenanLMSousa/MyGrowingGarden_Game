@@ -7,10 +7,11 @@ public class UIShop : MonoBehaviour
 {//This class does not require the shop script, but does need an ItemListType to create the shop interface
 
 
-
+   
     public Card cardPrefab; 
     public Transform cardObjectParent;
     public ItemListType stockItemList;
+    public UIPriceTag priceTagPrefab;
 
 
     private List<Card> instantiatedCardsList = new List<Card>();
@@ -33,6 +34,11 @@ public class UIShop : MonoBehaviour
             Item _item = stockItemList.itemList[i];
             instantiatedCardsList[i].SetItem(_item);
 
+
+            UIPriceTag _priceTag = Instantiate(priceTagPrefab);
+            _priceTag.transform.SetParent(instantiatedCardsList[i].transform);
+            _priceTag.OnEnabled();
+
         }
     }
     void InitializeGridElements()
@@ -53,6 +59,11 @@ public class UIShop : MonoBehaviour
         _gridCard.transform.SetParent(cardObjectParent);
         _gridCard.transform.localScale = new Vector3(1, 1, 1);
         _gridCard.gameObject.AddComponent<ShopCardOnClick>();
+
+        
+
+        
+       
 
     }
 }

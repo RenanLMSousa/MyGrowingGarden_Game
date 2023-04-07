@@ -35,6 +35,7 @@ public class UICropCardGenerateGrid : MonoBehaviour
                 Card card = Instantiate(prefabCardUIObject);
                 card.transform.SetParent(parentGameObject.transform);
                 card.SetItem(slot.item);
+                card.SetAmmount(slot.ammount);
                 card.transform.localScale = new Vector3(1, 1, 1);
                 card.gameObject.AddComponent<OnCropCardClick>().onClickEvent = onCardClick;
             }
