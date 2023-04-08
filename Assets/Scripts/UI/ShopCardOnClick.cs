@@ -18,6 +18,8 @@ public class ShopCardOnClick : MonoBehaviour, IPointerClickHandler
 
         //Change sometime in the future
         Debug.LogWarning("Direct player reference");
+
+
         GameManager.gameManager.player.BuyItem(card.GetItem(),1);
 
 

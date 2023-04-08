@@ -10,9 +10,18 @@ public class Player : ScriptableObject, IBuyer
     public FloatType money;
     public void BuyItem(Item item, int ammount)
     {
-        if (!CanBuy(item.GetBuyingPrice()*ammount)) return;
-        this.money.floatValue -= item.GetBuyingPrice() * ammount;
-        inventory.AddToInventory(item, ammount);
+        if (!CanBuy(item.GetBuyingPrice() * ammount)) {
+            GeneralSoundManager.generalSoundManager.PlaySFXCantBuyItem();
+            Debug.LogWarning("Direct Sound Reference");
+            return; }
+        else
+        {
+            this.money.floatValue -= item.GetBuyingPrice() * ammount;
+            inventory.AddToInventory(item, ammount);
+
+            GeneralSoundManager.generalSoundManager.PlaySFXBuyItem();
+            Debug.LogWarning("Direct Sound Reference");
+        }
     }
 
     public bool CanBuy(float price)

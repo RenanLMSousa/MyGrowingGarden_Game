@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b23eee95f7e11be47af88da7a2c170d9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - soundManager: {fileID: 11400000, guid: 79ada645f0b26f1479b5685115030aca, type: 2}
+  - SFXOpenUI: {fileID: 11400000, guid: 6d7bf57bfc5288d45bde754194d348e2, type: 2}
+  - SFXCloseUI: {fileID: 11400000, guid: 6448267c66ecf874b8c0328ee6771f86, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

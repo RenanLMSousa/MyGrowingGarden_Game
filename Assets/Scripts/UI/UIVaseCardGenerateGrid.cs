@@ -37,7 +37,9 @@ public class UIVaseCardGenerateGrid : MonoBehaviour
                 card.SetAmmount(slot.ammount);
                 card.transform.localScale = new Vector3(1, 1, 1);
                 card.gameObject.AddComponent<OnVaseCardClick>().onClickEvent = onCardClick;
-                
+
+
+
             }
         }
     }

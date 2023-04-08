@@ -9,6 +9,8 @@ public class UIPlantingArea : MonoBehaviour , IPointerClickHandler
     public PlantingSpot plantingSpot;
     public GameEvent onClick;
     public TMP_Text txtCountdown;
+
+
     public void OnPointerClick(PointerEventData eventData)
     {
 
@@ -18,6 +20,11 @@ public class UIPlantingArea : MonoBehaviour , IPointerClickHandler
         if (plantingSpot.crop.IsGrown())
         {
         PlantingSpotManager.HarvestPlant(plantingSpot);
+
+            GeneralSoundManager.generalSoundManager.PlaySFXHarvestCrop();
+            Debug.LogWarning("Direct Sound Reference");
+
+
         }
         else { onClick.Raise(); }
             

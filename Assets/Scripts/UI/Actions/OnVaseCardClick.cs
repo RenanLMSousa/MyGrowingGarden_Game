@@ -22,7 +22,11 @@ public class OnVaseCardClick : MonoBehaviour , IPointerClickHandler
             Item oldItem = new Item(PlantingSpotManager.currentPlantingSpot.vase.vaseScriptableObject);
             this.inventory.AddToInventory(oldItem, 1);
         }
-        
+
+
+        GeneralSoundManager.generalSoundManager.PlaySFXPutVase();
+        Debug.LogWarning("Direct Sound Reference");
+
         PlantingSpotManager.currentPlantingSpot.setVase((VaseScriptableObject)item.ItemScriptableObject);
         this.inventory.RemoveFromInventory(item, 1);
         this.gameObject.transform.parent.parent.gameObject.SetActive(false);

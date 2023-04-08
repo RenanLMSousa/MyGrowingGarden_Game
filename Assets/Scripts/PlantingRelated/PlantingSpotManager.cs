@@ -71,9 +71,19 @@ public class PlantingSpotManager : MonoBehaviour
 
         if (GetNextSpotPrice() <= player.GetMoney())
         {
+
+            GeneralSoundManager.generalSoundManager.PlaySFXBuyNewArea();
+            Debug.LogWarning("Direct Sound Reference");
+
             player.SetMoney(player.GetMoney() - GetNextSpotPrice());
             InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
             InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
+        }
+        else{
+
+            GeneralSoundManager.generalSoundManager.PlaySFXCantBuyItem();
+            Debug.LogWarning("Direct Sound Reference");
+
         }
     }
     public static float GetNextSpotPrice()

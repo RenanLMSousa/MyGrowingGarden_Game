@@ -26,7 +26,11 @@ public class UIShelfManager : MonoBehaviour
         cropCard.SetItem(cropItem);
     }
     public void OnOpen()
-    {
+    {   if (parentObject.activeSelf == false)
+        {
+            Debug.LogWarning("Direct Sound Reference");
+            GeneralSoundManager.generalSoundManager.PlaySFXOpenUI();
+        }
         parentObject.SetActive(true);
         UpdateCards();
 
