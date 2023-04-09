@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b72e7cf19af74bba8b6a76f3e0f13, type: 3}
   m_Name: BuyItem
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
   privateVolume: 0
   loop: 0

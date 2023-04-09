@@ -7,6 +7,7 @@ public class GeneralSoundManager : MonoBehaviour
 {
     public static GeneralSoundManager generalSoundManager;
 
+    [Header("Sound Effects")]
     public SoundManager soundManager;
 
     public SoundType SFXOpenUI;
@@ -22,18 +23,26 @@ public class GeneralSoundManager : MonoBehaviour
 
     public SoundType SFXBuyNewArea;
 
-    private AudioSource audioSource;
+    public SoundType SFXCropGrown;
 
+    [Header("Audio Sources")]
+    public AudioSource effectsAudioSource;
+    public AudioSource musicAudioSource;
+    public AudioSource ambientAudioSource;
 
+   
     private void Awake()
     {
-        audioSource = this.GetComponent<AudioSource>();
         generalSoundManager = this;
     }
-
+    private void Start()
+    {
+        SetMusicVolume(soundManager.MusicVolume);
+        SetEffectsVolume(soundManager.EffectsVolume);
+    }
     public void PlaySoundEffect(SoundType type)
     {
-        audioSource.PlayOneShot(type.audioClip, soundManager.EffectsVolume);
+        effectsAudioSource.PlayOneShot(type.audioClip, soundManager.EffectsVolume);
 
     }
 
@@ -69,4 +78,19 @@ public class GeneralSoundManager : MonoBehaviour
     {
         PlaySoundEffect(SFXBuyNewArea);
     }
+    public void PlaySFXCropGrown()
+    {
+        PlaySoundEffect(SFXCropGrown);
+    }
+    public void SetEffectsVolume(float f)
+    {
+        soundManager.EffectsVolume = f;
+        effectsAudioSource.volume = f;
+    }
+    public void SetMusicVolume(float f)
+    {
+        soundManager.MusicVolume = f;
+        musicAudioSource.volume = f;
+    }
+    
 }

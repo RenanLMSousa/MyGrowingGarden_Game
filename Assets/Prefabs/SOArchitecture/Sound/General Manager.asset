@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af462b765a2b45540be637f0418da342, type: 3}
   m_Name: General Manager
   m_EditorClassIdentifier: 
-  EffectsVolume: 1
-  MusicVolume: 1
+  EffectsVolume: 0.7464415
+  MusicVolume: 0.14655109

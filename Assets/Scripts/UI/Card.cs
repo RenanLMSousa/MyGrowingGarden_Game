@@ -37,12 +37,14 @@ public abstract class Card : MonoBehaviour
             this.imgImage.sprite = item.GetSprite();
             this.txtName.text = item.GetName();
             this.txtTier.text = item.GetTier().ToString();
+            this.txtDescription.text = item.GetDesc();
         }
         else
         {
             this.imgImage.sprite = null;
             this.txtName.text = "";
             this.txtTier.text = "";
+            this.txtDescription.text = "";
         }
     }
     public Item GetItem()

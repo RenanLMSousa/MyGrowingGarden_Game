@@ -42,6 +42,10 @@ public class Item
     {
         return ItemScriptableObject == null? null : ItemScriptableObject.name;
     }
+    public string GetDesc()
+    {
+        return ItemScriptableObject == null ? null : ItemScriptableObject.description;
+    }
     /*
         public float GetSellingPrice()
     {

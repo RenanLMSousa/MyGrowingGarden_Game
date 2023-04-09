@@ -10,6 +10,7 @@ public class UIPlantingArea : MonoBehaviour , IPointerClickHandler
     public GameEvent onClick;
     public TMP_Text txtCountdown;
 
+    private bool isGrown = false;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -23,6 +24,7 @@ public class UIPlantingArea : MonoBehaviour , IPointerClickHandler
 
             GeneralSoundManager.generalSoundManager.PlaySFXHarvestCrop();
             Debug.LogWarning("Direct Sound Reference");
+            isGrown = false;
 
 
         }
@@ -43,19 +45,38 @@ public class UIPlantingArea : MonoBehaviour , IPointerClickHandler
         remaingTime = remaingTime % 60;
 
         int seconds = (int)remaingTime;
+        string DHMSFormatString = "";
+        if (remaingTime == 0)
+        {
+            GeneralSoundManager.generalSoundManager.PlaySFXCropGrown();
+            Debug.LogWarning("Direct Sound Reference and function overlap");
 
-        string DHMSFormatString = days.ToString() + "D\n" + hours.ToString() + "H\n" + minutes.ToString() + "M\n" + seconds.ToString() + "s";
+            isGrown = true;
+            DHMSFormatString = "Fully Grown!";
+            return DHMSFormatString;
+        }
+
+        if (days > 0) DHMSFormatString += days.ToString() + "D";
+        if (hours > 0) DHMSFormatString += hours.ToString() + "H";
+        if (minutes > 0) DHMSFormatString += minutes.ToString() + "M";
+        if (seconds >=0) DHMSFormatString += seconds.ToString() + "s";
+
+
         return DHMSFormatString;
 
     }
     private void Update()
-    {   if (plantingSpot.crop.cropScriptableObject != null)
+    {
+        if (!isGrown)
         {
-            txtCountdown.text = toTime(plantingSpot.crop.GetTimeLeft());
-        }
-        else
-        {
-            txtCountdown.text = "";
+            if (plantingSpot.crop.cropScriptableObject != null)
+            {
+                txtCountdown.text = toTime(plantingSpot.crop.GetTimeLeft());
+            }
+            else
+            {
+                txtCountdown.text = "";
+            }
         }
     }
     public void SetPlantGrown()

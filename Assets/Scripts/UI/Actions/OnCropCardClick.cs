@@ -36,5 +36,10 @@ public class OnCropCardClick : MonoBehaviour , IPointerClickHandler
             onClickEvent.Raise();
             
         }
+        else
+        {
+            GeneralSoundManager.generalSoundManager.PlaySFXCantBuyItem();
+            Debug.LogWarning("Direct Sound Reference");
+        }
     }
 }

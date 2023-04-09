@@ -53,7 +53,9 @@ public class GameManager : MonoBehaviour
     {
         
         SaveState saveState = SaveSystem.LoadState();
-        if(saveState == null) { return; }
+        if(saveState == null) {
+            Debug.Log("No save state");
+            return; }
 
 
         TimeSpan timeSpan = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0);
