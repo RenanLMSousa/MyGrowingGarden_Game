@@ -12,17 +12,23 @@ public class PlantingSpot : MonoBehaviour ,IPointerClickHandler
     public void setCrop(CropScriptableObject cropSO) {
 
         crop.SetCrop(cropSO);
+        
         if (vase != null)
-        {
+        {   
+
+            if(crop.GetTier() <= vase.GetTier()) { return; }
+
             crop.SetIsPlanted(true);
             crop.SetGrowthTime(crop.GetGrowthTime() / vase.GetGrowthAcceleration());
             crop.SetSellingValue(crop.GetSellingValue() * vase.GetProductionMultiplier());
+            if(crop!=null)
+            crop.transform.position = vase.GetVaseTop();
 
         }
 
     }
     public void setVase(VaseScriptableObject vaseSO)
-    {
+    {   if(crop.cropScriptableObject != null) { return; }
         vase.SetVase(vaseSO);
     }
 

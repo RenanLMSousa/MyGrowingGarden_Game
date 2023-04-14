@@ -13,6 +13,6 @@ public class UIPriceTag : MonoBehaviour
         card = this.transform.parent.GetComponent<Card>();
         this.transform.localScale = new Vector3(1, 1, 1);
         price = card.GetItem().GetBuyingPrice();
-        txtPrice.text = price.ToString();
+        txtPrice.text = UnityConversor.moneyToK(price);
     }
 }

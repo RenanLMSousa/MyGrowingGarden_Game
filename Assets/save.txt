@@ -1,1 +1,0 @@
-{"playerMoney":30.0,"plantingSpotsOwned":0,"playerName":"Urubuntu","timeOnClose":1680888969.1607736,"vasesOnPlantingSpots":[],"cropsOnPlantingSpots":[],"cropsGrowthTime":[],"inventoryItem":[],"inventoryAmmount":[]}

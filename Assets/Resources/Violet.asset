@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
+  m_Name: Violet
+  m_EditorClassIdentifier: 
+  buyingPrice: 7000
+  sellingPrice: 9000
+  tier: 3
+  description: A classic
+  itemName: Violet
+  spritePhase:
+  - {fileID: -736012917, guid: 13cbff345f184d144abd755ae54176ab, type: 3}
+  - {fileID: 738320305, guid: 13cbff345f184d144abd755ae54176ab, type: 3}
+  - {fileID: 744093041, guid: 13cbff345f184d144abd755ae54176ab, type: 3}
+  - {fileID: 35728697, guid: 13cbff345f184d144abd755ae54176ab, type: 3}
+  - {fileID: 1324181322, guid: 13cbff345f184d144abd755ae54176ab, type: 3}
+  - {fileID: 1855090535, guid: 13cbff345f184d144abd755ae54176ab, type: 3}
+  growthTime: 30

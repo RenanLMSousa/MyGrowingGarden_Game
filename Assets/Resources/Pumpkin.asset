@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
+  m_Name: Pumpkin
+  m_EditorClassIdentifier: 
+  buyingPrice: 50000
+  sellingPrice: 65000
+  tier: 4
+  description: Scary?
+  itemName: Pumpkin
+  spritePhase:
+  - {fileID: -1840485822, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  - {fileID: -276792869, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  - {fileID: -2013377059, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  - {fileID: 1660506591, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  - {fileID: 1215122993, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  - {fileID: 659142940, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  - {fileID: 169717393, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  - {fileID: -296786061, guid: 2b0d5bc30a757c44ba52ff0b982b0fd0, type: 3}
+  growthTime: 240

@@ -11,9 +11,15 @@ public class UIPlayerInfo : MonoBehaviour
     public TMP_Text txtPlayerName;
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        this.txtPlayerName.text = player.playerName;
+    }
     void Update()
     {
-        this.txtPlayerMoney.text = player.GetMoney().ToString();
-        this.txtPlayerName.text = player.playerName;
+
+        this.txtPlayerMoney.text = UnityConversor.moneyToK(player.GetMoney());
+            
+        
     }
 }

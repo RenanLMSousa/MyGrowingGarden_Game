@@ -13,7 +13,7 @@ public class CropCard : Card
         {
             CropScriptableObject cropSO = item.ItemScriptableObject as CropScriptableObject;
             txtSellingPrice.text = cropSO.sellingPrice.ToString();
-            txtGrowthTime.text = cropSO.growthTime.ToString();
+            txtGrowthTime.text = UnityConversor.secToDHMS(cropSO.growthTime);
         }
         else
         {

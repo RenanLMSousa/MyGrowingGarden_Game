@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
+  m_Name: Sunflower
+  m_EditorClassIdentifier: 
+  buyingPrice: 400
+  sellingPrice: 500
+  tier: 2
+  description: It chases the sun
+  itemName: Sunflower
+  spritePhase:
+  - {fileID: -1395491338, guid: 28e6020a506be39498c7e77092f4f151, type: 3}
+  - {fileID: -1873502719, guid: 28e6020a506be39498c7e77092f4f151, type: 3}
+  - {fileID: -1405205153, guid: 28e6020a506be39498c7e77092f4f151, type: 3}
+  - {fileID: 2079965676, guid: 28e6020a506be39498c7e77092f4f151, type: 3}
+  - {fileID: 1484269937, guid: 28e6020a506be39498c7e77092f4f151, type: 3}
+  - {fileID: 1329695863, guid: 28e6020a506be39498c7e77092f4f151, type: 3}
+  growthTime: 60

@@ -8,7 +8,6 @@ using UnityEngine;
 public class SaveState
 {
     public float playerMoney;
-    public int plantingSpotsOwned;
     public string playerName;
 
     public double timeOnClose;
@@ -25,7 +24,6 @@ public class SaveState
     {
         this.playerName = player.playerName;
         this.playerMoney = player.GetMoney();
-        this.plantingSpotsOwned = ownedPlantingSpots.Count;
         this.timeOnClose = timeOnClose;
 
         vasesOnPlantingSpots = new List<string>();

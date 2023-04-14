@@ -22,9 +22,13 @@ public class PlantingSpotManager : MonoBehaviour
 
     private static float BASEPRICE = 100;
 
+    private static float TODOGrowthBonus = 1;
+    private static float TODOGrowthAcceleration = 1;
+
   
     public static void HarvestPlant(PlantingSpot plantingSpot)
     {
+        if (!plantingSpot.crop.IsGrown()) return;
         player.SetMoney(player.GetMoney() + plantingSpot.crop.GetSellingValue());
         plantingSpot.crop.SetNull();
 
@@ -91,5 +95,30 @@ public class PlantingSpotManager : MonoBehaviour
         return BASEPRICE*ownedPlantingSpots.Count;
     }
 
+    public static void IncreaseGrowingTime(float increase)
+    {
+        foreach(PlantingSpot spot in ownedPlantingSpots)
+        {
+            spot.crop.SetGrowingTime(spot.crop.GetGrowingTime() + increase);
+        }
+    }
+    public static void GrowCrop(PlantingSpot plantingSpot)
+    {
+        plantingSpot.crop.SetGrowingTime(plantingSpot.crop.GetGrowthTime());
+    }
+    public static void HarvestAll()
+    {
+        foreach(PlantingSpot plantingSpot in ownedPlantingSpots)
+        {
+            HarvestPlant(plantingSpot);
+        }
+    }
+    public static void GrowAll()
+    {
+        foreach (PlantingSpot plantingSpot in ownedPlantingSpots)
+        {
+            GrowCrop(plantingSpot);
+        }
+    }
 
 }

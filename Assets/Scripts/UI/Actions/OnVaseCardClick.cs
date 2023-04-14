@@ -17,6 +17,13 @@ public class OnVaseCardClick : MonoBehaviour , IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {   
+        if(PlantingSpotManager.currentPlantingSpot.crop.cropScriptableObject != null)
+        {
+            GeneralSoundManager.generalSoundManager.PlaySFXCantBuyItem();
+            Debug.LogWarning("Direct Sound Reference");
+            return;
+        }
+
         if (PlantingSpotManager.currentPlantingSpot.vase.vaseScriptableObject != null)
         {
             Item oldItem = new Item(PlantingSpotManager.currentPlantingSpot.vase.vaseScriptableObject);

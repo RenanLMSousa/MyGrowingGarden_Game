@@ -15,3 +15,5 @@ MonoBehaviour:
   _itemStock:
   - {fileID: 11400000, guid: 885d97c1e0e5f944eb43a0eff9631ef5, type: 2}
   - {fileID: 11400000, guid: fd7043fe017dfbe44a2e6b3390cc1830, type: 2}
+  - {fileID: 11400000, guid: cf45c03b1701a5e4380bf25f2b874a32, type: 2}
+  - {fileID: 11400000, guid: cfa0a40004c3f1447be73e6b84d1aaf3, type: 2}

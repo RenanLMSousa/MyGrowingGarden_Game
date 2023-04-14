@@ -157,4 +157,8 @@ public class Crop:MonoBehaviour
     {
         return cropScriptableObject == null ? null : cropScriptableObject.name;
     }
+    public int GetTier()
+    {
+        return cropScriptableObject==null? 0 : cropScriptableObject.tier;
+    }
 }

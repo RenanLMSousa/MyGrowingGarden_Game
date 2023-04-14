@@ -49,7 +49,9 @@ public class Vase : MonoBehaviour
     }
     public Vector2 GetVaseTop()
     {   //Return the position where the plant should grow
-        return this.transform.position + new Vector3(0,1,0);
+        Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
+        if (sprite == null) return Vector2.zero; 
+        return this.transform.position + new Vector3(0, sprite.bounds.size.y/2,0);
     }
     public Sprite getSprite()
     {
@@ -62,10 +64,15 @@ public class Vase : MonoBehaviour
     public float GetProductionMultiplier()
     {
         return this.productionMultiplier;
-    }
+    } 
     public string GetSOName()
     {
         
         return vaseScriptableObject == null ? null : vaseScriptableObject.name;
+    }
+
+    public int GetTier()
+    {
+        return vaseScriptableObject == null? 0 : vaseScriptableObject.tier;
     }
 }

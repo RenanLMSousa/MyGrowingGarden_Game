@@ -14,7 +14,7 @@ public class VaseCard : Card
         if (item != null)
         {
             VaseScriptableObject vaseSo = item.ItemScriptableObject as VaseScriptableObject;
-            txtGrowthAcceleration.text = vaseSo.growthAcceleration.ToString();
+            txtGrowthAcceleration.text = vaseSo.growthAcceleration.ToString() ;
             txtProductionMultiplier.text = vaseSo.productionMultiplier.ToString();
         }
         else
