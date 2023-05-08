@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
   m_Name: Violet
   m_EditorClassIdentifier: 
-  buyingPrice: 7000
-  sellingPrice: 9000
+  buyingPrice: 100000000
+  sellingPrice: 120000000
   tier: 3
   description: A classic
   itemName: Violet

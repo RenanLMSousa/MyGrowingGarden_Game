@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75373a2fee1fdad4d8db9823707fe264, type: 3}
   m_Name: Wooden Vase
   m_EditorClassIdentifier: 
-  buyingPrice: 5000
+  buyingPrice: 400000000
   sellingPrice: 0
   tier: 3
   description: 
   itemName: Wooden
   vaseSprite: {fileID: 21300000, guid: 4aca1c19dc6268d4db2e69d7e1a4bfd2, type: 3}
-  growthAcceleration: 2
-  productionMultiplier: 1.5
+  growthAcceleration: 0.1
+  productionMultiplier: 40

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemStock:
   - {fileID: 11400000, guid: 0d3639f7d9a6c264f8b041868a7ce512, type: 2}
-  - {fileID: 11400000, guid: e3513195c7f87114aacf5846a94ed40b, type: 2}
-  - {fileID: 11400000, guid: 7ba25f3fd89d4fb4db1f9d666d066805, type: 2}
+  - {fileID: 11400000, guid: cf4da509213659d47b63f11895645ab8, type: 2}
   - {fileID: 11400000, guid: adeda6aade04e384b97f0bf627acfb5b, type: 2}
+  - {fileID: 11400000, guid: b4ac9965c00707042b5a1d46f02088f1, type: 2}
+  - {fileID: 11400000, guid: 7ba25f3fd89d4fb4db1f9d666d066805, type: 2}
   - {fileID: 11400000, guid: f7b5667562d30b84780886ec2eebe28d, type: 2}
+  - {fileID: 11400000, guid: e3513195c7f87114aacf5846a94ed40b, type: 2}

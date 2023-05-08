@@ -51,7 +51,7 @@ public class Vase : MonoBehaviour
     {   //Return the position where the plant should grow
         Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
         if (sprite == null) return Vector2.zero; 
-        return this.transform.position + new Vector3(0, sprite.bounds.size.y/2,0);
+        return this.transform.position + new Vector3(0, sprite.bounds.size.y,0);
     }
     public Sprite getSprite()
     {

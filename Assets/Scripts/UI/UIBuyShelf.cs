@@ -28,7 +28,7 @@ public class UIBuyShelf : MonoBehaviour , IPointerClickHandler
 
     public void Update()
     {
-        this.txtPrice.text = PlantingSpotManager.GetNextSpotPrice().ToString();
+        this.txtPrice.text = UnityConversor.moneyToK(PlantingSpotManager.GetNextSpotPrice());
         this.transform.position = startPos + (PlantingSpotManager.ownedPlantingSpots.Count/2) * PlantingSpotManager.yDistance* new Vector3(0,1,0);
     }
 

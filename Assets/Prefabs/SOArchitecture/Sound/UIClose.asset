@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b72e7cf19af74bba8b6a76f3e0f13, type: 3}
   m_Name: UIClose
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  audioClip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
   privateVolume: 0
   loop: 0

@@ -17,6 +17,6 @@ MonoBehaviour:
   tier: 1
   description: Not the best quality
   itemName: Cardboard
-  vaseSprite: {fileID: 21300000, guid: e047a1a89e4b2634ab0dd51c3c5946fe, type: 3}
+  vaseSprite: {fileID: 21300000, guid: 1eb5bd301dcc2b341890b2a63e20fd7f, type: 3}
   growthAcceleration: 1
   productionMultiplier: 1

@@ -23,7 +23,7 @@ public static class UnityConversor
         if (days > 0) DHMSFormatString += days.ToString() + "D";
         if (hours > 0) DHMSFormatString += hours.ToString() + "H";
         if (minutes > 0) DHMSFormatString += minutes.ToString() + "m";
-        if (seconds >= 0) DHMSFormatString += seconds.ToString() + "s";
+        if (seconds > 0) DHMSFormatString += seconds.ToString() + "s";
 
 
 
@@ -33,7 +33,7 @@ public static class UnityConversor
     }
 
     public static string moneyToK(float initialValue)
-    {
+    {  
         int orderOfMagnitude = 0;
         float currentValue = initialValue;
         while (currentValue / 1000 >=1)
@@ -63,9 +63,16 @@ public static class UnityConversor
                 complete = "T";
                 break;
             case 5:
-                complete = "Q";
+                complete = "Qa";
                 break;
-            
+            case 6:
+                complete = "Qi";
+                break;
+            default:
+                complete = (char)(orderOfMagnitude - 6 +'a')+"";
+                break;
+                
+
 
         }
         return currentValue.ToString("0.##") + complete;

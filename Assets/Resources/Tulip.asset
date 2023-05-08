@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
   m_Name: Tulip
   m_EditorClassIdentifier: 
-  buyingPrice: 200000
-  sellingPrice: 240000
+  buyingPrice: 1e+14
+  sellingPrice: 1e+14
   tier: 5
   description: As pretty as it gets
   itemName: Tulip

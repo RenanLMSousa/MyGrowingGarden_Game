@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
   m_Name: Pumpkin
   m_EditorClassIdentifier: 
-  buyingPrice: 50000
-  sellingPrice: 65000
+  buyingPrice: 1e+11
+  sellingPrice: 1e+11
   tier: 4
   description: Scary?
   itemName: Pumpkin

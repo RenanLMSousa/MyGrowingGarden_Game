@@ -29,11 +29,25 @@ public class PlantingSpotManager : MonoBehaviour
     public static void HarvestPlant(PlantingSpot plantingSpot)
     {
         if (!plantingSpot.crop.IsGrown()) return;
-        player.SetMoney(player.GetMoney() + plantingSpot.crop.GetSellingValue());
+        player.SetMoney(player.GetMoney() + plantingSpot.crop.GetSellingValue()*GetOnHarvestTierDiffBonus(plantingSpot));
         plantingSpot.crop.SetNull();
 
-        
+
     }
+
+    private static float GetOnHarvestTierDiffBonus(PlantingSpot plantingSpot)
+    {
+        return GetOnHarvestTierDiffBonus(plantingSpot.crop.GetTier() , plantingSpot.vase.GetTier());
+    }
+    private static float GetOnHarvestTierDiffBonus(int crop, int vase)
+    {   
+        if(vase <= crop) { return 1; }
+        const int BASEVALUE = 2;
+
+        return Mathf.Pow(BASEVALUE, vase - crop);
+    }
+
+
     public static void AddPlantingSpot(PlantingSpot plantingSpot)
     {
         ownedPlantingSpots.Add(plantingSpot);
@@ -92,14 +106,21 @@ public class PlantingSpotManager : MonoBehaviour
     }
     public static float GetNextSpotPrice()
     {
-        return BASEPRICE*ownedPlantingSpots.Count;
+        return BASEPRICE*Mathf.Pow(2,ownedPlantingSpots.Count);
     }
 
-    public static void IncreaseGrowingTime(float increase)
+    public static void IncreaseGrowingTimeAbsolute(float increase)
     {
         foreach(PlantingSpot spot in ownedPlantingSpots)
         {
             spot.crop.SetGrowingTime(spot.crop.GetGrowingTime() + increase);
+        }
+    }
+    public static void IncreaseGrowingTimeRelative(float increase)
+    {
+        foreach (PlantingSpot spot in ownedPlantingSpots)
+        {
+            spot.crop.SetGrowingTime(spot.crop.GetGrowingTime() + increase*spot.vase.GetGrowthAcceleration());
         }
     }
     public static void GrowCrop(PlantingSpot plantingSpot)

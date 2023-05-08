@@ -14,15 +14,16 @@ public class PlantingSpot : MonoBehaviour ,IPointerClickHandler
         crop.SetCrop(cropSO);
         
         if (vase != null)
-        {   
+        {
+            
+            if (crop.GetTier() > vase.GetTier()) { return; }
 
-            if(crop.GetTier() <= vase.GetTier()) { return; }
 
             crop.SetIsPlanted(true);
             crop.SetGrowthTime(crop.GetGrowthTime() / vase.GetGrowthAcceleration());
             crop.SetSellingValue(crop.GetSellingValue() * vase.GetProductionMultiplier());
-            if(crop!=null)
             crop.transform.position = vase.GetVaseTop();
+            
 
         }
 

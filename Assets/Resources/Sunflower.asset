@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acc5bf97a6ca094988245c80889d5ba, type: 3}
   m_Name: Sunflower
   m_EditorClassIdentifier: 
-  buyingPrice: 400
-  sellingPrice: 500
+  buyingPrice: 10000
+  sellingPrice: 12000
   tier: 2
   description: It chases the sun
   itemName: Sunflower

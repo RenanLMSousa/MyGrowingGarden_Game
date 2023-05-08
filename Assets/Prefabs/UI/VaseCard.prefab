@@ -285,8 +285,8 @@ MonoBehaviour:
   txtDescription: {fileID: 3033337473182074545}
   txtAmmount: {fileID: 699227385865969257}
   onPlantAreaChange: {fileID: 0}
-  txtGrowthAcceleration: {fileID: 999814671804279137}
-  txtProductionMultiplier: {fileID: 999814673445466374}
+  txtGrowthAcceleration: {fileID: 999814673445466374}
+  txtProductionMultiplier: {fileID: 999814671804279137}
 --- !u!1 &999814673110249680
 GameObject:
   m_ObjectHideFlags: 0

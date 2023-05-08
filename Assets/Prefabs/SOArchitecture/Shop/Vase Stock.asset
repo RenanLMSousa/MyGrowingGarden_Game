@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Vase Stock
   m_EditorClassIdentifier: 
   _itemStock:
-  - {fileID: 11400000, guid: 885d97c1e0e5f944eb43a0eff9631ef5, type: 2}
   - {fileID: 11400000, guid: fd7043fe017dfbe44a2e6b3390cc1830, type: 2}
+  - {fileID: 11400000, guid: 49f10e03501c7d4458558a7904799077, type: 2}
+  - {fileID: 11400000, guid: 1949b4053aea33c449a0aaf54a47a7c5, type: 2}
+  - {fileID: 11400000, guid: 885d97c1e0e5f944eb43a0eff9631ef5, type: 2}
   - {fileID: 11400000, guid: cf45c03b1701a5e4380bf25f2b874a32, type: 2}
+  - {fileID: 11400000, guid: 79e9809c5de6c714585a84a5ddf03fef, type: 2}
   - {fileID: 11400000, guid: cfa0a40004c3f1447be73e6b84d1aaf3, type: 2}
+  - {fileID: 11400000, guid: 3dcb9c86dded1814ca215227caacc0a7, type: 2}
+  - {fileID: 11400000, guid: 77908356493e5024c8239fff87709951, type: 2}
+  - {fileID: 11400000, guid: e415b785388c4d74bba16c3af4135479, type: 2}

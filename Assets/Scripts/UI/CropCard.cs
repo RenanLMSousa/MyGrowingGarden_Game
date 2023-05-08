@@ -12,7 +12,7 @@ public class CropCard : Card
         if (item != null)
         {
             CropScriptableObject cropSO = item.ItemScriptableObject as CropScriptableObject;
-            txtSellingPrice.text = cropSO.sellingPrice.ToString();
+            txtSellingPrice.text = UnityConversor.moneyToK(cropSO.sellingPrice);
             txtGrowthTime.text = UnityConversor.secToDHMS(cropSO.growthTime);
         }
         else

@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     public GameObject UIInteracteableAreaPrefab;
     public Transform UIInteracteableAreaPrefabParent;
 
+    private float _timeSinceUpdate = 0;
 
 
     private double _TimeOnQuit = 0;
     private double _TimeOnComeback = 0;
+
+    public GameObject selectNickname;
     private void Awake()
     {
         
@@ -31,6 +34,24 @@ public class GameManager : MonoBehaviour
         LoadState();
     }
 
+    private void Update()
+    {
+        PassiveMoneyGain();
+    }
+
+    private void PassiveMoneyGain()
+    {
+        _timeSinceUpdate += Time.deltaTime;
+        if (_timeSinceUpdate >= 1)
+        {   //+0.5 gold/s each planting spot
+            const float BASEVALUE = 2.5f;
+            int ownedLines = PlantingSpotManager.ownedPlantingSpots.Count/2;
+            float bonus =  Mathf.Pow(BASEVALUE, ownedLines)* ownedLines;
+            player.money.floatValue += Mathf.Pow(1.5f, PlantingSpotManager.ownedPlantingSpots.Count/2);
+            _timeSinceUpdate = 0;
+        }
+
+    }
     private void OnApplicationPause(bool pause)
     { 
 
@@ -53,7 +74,7 @@ public class GameManager : MonoBehaviour
             _TimeOnComeback = (double)timeSpan.TotalSeconds;
 
             double TimeDiff = _TimeOnComeback - _TimeOnQuit;
-            PlantingSpotManager.IncreaseGrowingTime((float)(TimeDiff));
+            PlantingSpotManager.IncreaseGrowingTimeAbsolute((float)(TimeDiff));
         }
     }
     public void SaveState()
@@ -93,6 +114,8 @@ public class GameManager : MonoBehaviour
          No player name
          
          */
+        selectNickname.SetActive(true);
+
         PlantingSpotManager.InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
         PlantingSpotManager.InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
 
@@ -114,10 +137,10 @@ public class GameManager : MonoBehaviour
 
             PlantingSpot plantingSpot = PlantingSpotManager.InstantiatePlantingSpotWithUI(plantingSpotPrefab, UIInteracteableAreaPrefab, UIInteracteableAreaPrefabParent);
 
-            VaseScriptableObject vaseSO = Resources.Load(saveState.vasesOnPlantingSpots[i]) as VaseScriptableObject;
+            VaseScriptableObject vaseSO = Resources.Load( saveState.vasesOnPlantingSpots[i]) as VaseScriptableObject;
             plantingSpot.setVase(vaseSO);
 
-            CropScriptableObject cropSO = Resources.Load(saveState.cropsOnPlantingSpots[i]) as CropScriptableObject;
+            CropScriptableObject cropSO = Resources.Load( saveState.cropsOnPlantingSpots[i]) as CropScriptableObject;
             plantingSpot.setCrop(cropSO);
             plantingSpot.crop.SetGrowingTime((float)(saveState.cropsGrowthTime[i] + timePassed));
         }
@@ -133,5 +156,22 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {  
         SaveState();
+    }
+
+
+    public void ClearPlantingSpots()
+    {
+
+        Debug.Log(PlantingSpotManager.ownedPlantingSpots.Count);
+        Debug.Log(PlantingSpotManager.ownedPlantingSpots);
+        Debug.Log(PlantingSpotManager.player);
+        Debug.Log(PlantingSpotManager.currentPlantingSpot);
+
+        foreach (PlantingSpot ps in PlantingSpotManager.ownedPlantingSpots)
+        {
+            Debug.Log(ps);
+            Debug.Log(ps.crop);
+            Debug.Log(ps.vase);
+        }
     }
 }
