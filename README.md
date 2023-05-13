@@ -3,7 +3,12 @@
 Welcome to **MyGrowingGarden**, the casual indie mobile game where you can build and manage your own garden! In this game, you will buy planting locations, pots, and plants, each with unique properties and interactions, to expand your garden and increase your profits.
 
 ## Screenshots
+[![Texto alternativo da imagem](./Images/MGG01.png)]
+[![Texto alternativo da imagem](./Images/MGG2.png)]
 
+
+[![Texto alternativo da imagem](./Images/MGG3.png)]
+[![Texto alternativo da imagem](./Images/MGG4.png)]
 
 ## Technical and artistic features
 
@@ -20,6 +25,10 @@ Compatibility with various screen sizes and resolutions
 Save/Load system
 
 Keeps track of time without consuming resources
+
+Day/Night Cycles
+
+Dynamic Clouds
 
 ## Game Systems
 
